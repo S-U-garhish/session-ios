@@ -565,6 +565,8 @@
 		C3DFFAC623E96F0D0058DAF8 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFFAC523E96F0D0058DAF8 /* Sheet.swift */; };
 		C3E5C2FA251DBABB0040DFFC /* EditClosedGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E5C2F9251DBABB0040DFFC /* EditClosedGroupVC.swift */; };
 		C3F0A530255C80BC007BE2A3 /* NoopNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0A52F255C80BC007BE2A3 /* NoopNotificationsManager.swift */; };
+		CE74C1F928EC0891006D8AC5 /* UIView+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */; };
+		CE74C1FA28EC0B46006D8AC5 /* UIView+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */; };
 		CEE449BA3596483519120D91 /* Pods_GlobalDependencies_FrameworkAndExtensionDependencies_ExtendedDependencies_SessionMessagingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A44E3F8AC9282AC5E6E5A /* Pods_GlobalDependencies_FrameworkAndExtensionDependencies_ExtendedDependencies_SessionMessagingKit.framework */; };
 		D2179CFC16BB0B3A0006F3AB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2179CFB16BB0B3A0006F3AB /* CoreTelephony.framework */; };
 		D2179CFE16BB0B480006F3AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2179CFD16BB0B480006F3AB /* SystemConfiguration.framework */; };
@@ -1649,6 +1651,7 @@
 		C3F0A52F255C80BC007BE2A3 /* NoopNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoopNotificationsManager.swift; sourceTree = "<group>"; };
 		C3F0A5B2255C915C007BE2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3F0A5EB255C970D007BE2A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Secure.swift"; sourceTree = "<group>"; };
 		D0CE0424239A1574F683D2D7 /* Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2179CFB16BB0B3A0006F3AB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D2179CFD16BB0B480006F3AB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -2179,6 +2182,7 @@
 				FD1C98E3282E3C5B00B76F9E /* UINavigationBar+Utilities.swift */,
 				FD848B8E283EF2A8000E298B /* UIScrollView+Utilities.swift */,
 				C31A6C59247F214E001123EF /* UIView+Glow.swift */,
+				CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */,
 				C3548F0724456AB6009433A8 /* UIView+Wrapping.swift */,
 				7BAADFCD27B215FE007BCF92 /* UIView+Draggable.swift */,
 				7BFD1A892745C4F000FB91B9 /* Permissions.swift */,
@@ -4386,7 +4390,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					D221A088169C9E5E00537ABF = {
-						DevelopmentTeam = SUQ8J2PCT7;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -4911,6 +4914,7 @@
 				FD3AABE928306BBD00E5099A /* ThreadPickerViewModel.swift in Sources */,
 				B817AD9A26436593009DF825 /* SimplifiedConversationCell.swift in Sources */,
 				C3ADC66126426688005F1414 /* ShareVC.swift in Sources */,
+				CE74C1FA28EC0B46006D8AC5 /* UIView+Secure.swift in Sources */,
 				7BAF54D427ACCF01003D12F8 /* SAEScreenLockViewController.swift in Sources */,
 				B817AD9C26436F73009DF825 /* ThreadPickerVC.swift in Sources */,
 				7BAF54D327ACCF01003D12F8 /* ShareAppExtensionContext.swift in Sources */,
@@ -5441,6 +5445,7 @@
 				4CC613362227A00400E21A3A /* ConversationSearch.swift in Sources */,
 				B82149B825D60393009C0F2A /* BlockedModal.swift in Sources */,
 				B82B408C239A068800A248E7 /* RegisterVC.swift in Sources */,
+				CE74C1F928EC0891006D8AC5 /* UIView+Secure.swift in Sources */,
 				FDFDE126282D05380098B17F /* MediaInteractiveDismiss.swift in Sources */,
 				34BECE301F7ABCF800D7438D /* GifPickerLayout.swift in Sources */,
 				C331FFFE2558FF3B00070591 /* FullConversationCell.swift in Sources */,
@@ -5835,7 +5840,7 @@
 				);
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger.ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger.ShareExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -5913,7 +5918,7 @@
 				);
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger.ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger.ShareExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5973,7 +5978,7 @@
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger.NotificationServiceExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger.NotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -6052,7 +6057,7 @@
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger.NotificationServiceExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger.NotificationServiceExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6108,7 +6113,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionUIKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -6187,7 +6192,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionUIKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6255,7 +6260,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SignalUtilitiesKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SignalUtilitiesKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -6342,7 +6347,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SignalUtilitiesKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SignalUtilitiesKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6402,7 +6407,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionSnodeKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionSnodeKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -6481,7 +6486,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionSnodeKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionSnodeKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6550,7 +6555,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionUtilitiesKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionUtilitiesKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -6638,7 +6643,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionUtilitiesKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionUtilitiesKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6698,7 +6703,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionMessagingKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionMessagingKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -6777,7 +6782,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.SessionMessagingKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.garhijapan.SessionMessagingKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6856,7 +6861,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-fobjc-arc-exceptions",
@@ -6928,7 +6933,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
@@ -6959,8 +6964,8 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 375;
-				DEVELOPMENT_TEAM = SUQ8J2PCT7;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -6998,10 +7003,10 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DDEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger";
 				PRODUCT_NAME = Session;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -7031,8 +7036,8 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 375;
-				DEVELOPMENT_TEAM = SUQ8J2PCT7;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -7070,9 +7075,9 @@
 					"$(SRCROOT)",
 				);
 				LLVM_LTO = NO;
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loki-project.loki-messenger";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.garhijapan.loki-messenger";
 				PRODUCT_NAME = Session;
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -7308,7 +7313,7 @@
 				453518751FC635DD00210559 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		7BC01A45241F40AB00BC7C55 /* Build configuration list for PBXNativeTarget "SessionNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
@@ -7317,7 +7322,7 @@
 				7BC01A44241F40AB00BC7C55 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		C331FF262558F9D400070591 /* Build configuration list for PBXNativeTarget "SessionUIKit" */ = {
 			isa = XCConfigurationList;
@@ -7326,7 +7331,7 @@
 				C331FF252558F9D400070591 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		C33FD9B6255A548A00E217F9 /* Build configuration list for PBXNativeTarget "SignalUtilitiesKit" */ = {
 			isa = XCConfigurationList;
@@ -7335,7 +7340,7 @@
 				C33FD9B5255A548A00E217F9 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		C3C2A5AA255385C100C340D1 /* Build configuration list for PBXNativeTarget "SessionSnodeKit" */ = {
 			isa = XCConfigurationList;
@@ -7344,7 +7349,7 @@
 				C3C2A5A9255385C100C340D1 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		C3C2A684255388CC00C340D1 /* Build configuration list for PBXNativeTarget "SessionUtilitiesKit" */ = {
 			isa = XCConfigurationList;
@@ -7353,7 +7358,7 @@
 				C3C2A683255388CC00C340D1 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		C3C2A6F925539DE700C340D1 /* Build configuration list for PBXNativeTarget "SessionMessagingKit" */ = {
 			isa = XCConfigurationList;
@@ -7362,7 +7367,7 @@
 				C3C2A6FB25539DE700C340D1 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		D221A083169C9E5E00537ABF /* Build configuration list for PBXProject "Session" */ = {
 			isa = XCConfigurationList;
@@ -7371,7 +7376,7 @@
 				D221A0BB169C9E5F00537ABF /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		D221A0BC169C9E5F00537ABF /* Build configuration list for PBXNativeTarget "Session" */ = {
 			isa = XCConfigurationList;
@@ -7380,7 +7385,7 @@
 				D221A0BE169C9E5F00537ABF /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		FD83B9B627CF200A005E1583 /* Build configuration list for PBXNativeTarget "SessionUtilitiesKitTests" */ = {
 			isa = XCConfigurationList;
@@ -7389,7 +7394,7 @@
 				FD83B9B827CF200A005E1583 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 		FDC4389527B9FFC700C60D73 /* Build configuration list for PBXNativeTarget "SessionMessagingKitTests" */ = {
 			isa = XCConfigurationList;
@@ -7398,7 +7403,7 @@
 				FDC4389727B9FFC700C60D73 /* App Store Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "App Store Release";
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

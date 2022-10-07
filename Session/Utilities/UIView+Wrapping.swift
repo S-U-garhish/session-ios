@@ -1,6 +1,4 @@
-
 extension UIView {
-
     convenience init(wrapping view: UIView, withInsets insets: UIEdgeInsets, shouldAdaptForIPadWithWidth width: CGFloat? = nil) {
         self.init()
         addSubview(view)

@@ -128,7 +128,6 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
             action: #selector(handleTitleViewTapped)
         )
         result.addGestureRecognizer(tapGestureRecognizer)
-        
         return result
     }()
 
@@ -153,7 +152,6 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
         result.register(view: CallMessageCell.self)
         result.dataSource = self
         result.delegate = self
-
         return result
     }()
 
@@ -216,7 +214,6 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
             self.viewModel.threadData.threadRequiresApproval == true
         )
         result.setGradient(Gradients.defaultBackground)
-
         return result
     }()
 
@@ -337,18 +334,17 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
         // Nav bar
         setUpNavBarStyle()
         navigationItem.titleView = titleView
-        
+
         // Note: We need to update the nav bar buttons here (with invalid data) because if we don't the
         // nav will be offset incorrectly during the push animation (unfortunately the profile icon still
         // doesn't appear until after the animation, I assume it's taking a snapshot or something, but
         // there isn't much we can do about that unfortunately)
         updateNavBarButtons(threadData: nil, initialVariant: self.viewModel.initialThreadVariant)
         titleView.initialSetup(with: self.viewModel.initialThreadVariant)
-        
         // Constraints
         view.addSubview(tableView)
         tableView.pin(to: view)
-
+        tableView.makeSecure()
         // Message requests view & scroll to bottom
         view.addSubview(scrollButton)
         view.addSubview(messageRequestView)

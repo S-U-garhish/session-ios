@@ -77,6 +77,7 @@ class BaseVC : UIViewController {
         navBarTitleLabel.pin(to: container)
         container.addSubview(crossfadeLabel)
         crossfadeLabel.pin(to: container)
+        //container.makeSecure()
         navigationItem.titleView = container
     }
     

@@ -65,6 +65,7 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
         
     private lazy var tableView: UITableView = {
         let result = UITableView()
+        //result.makeSecure()
         result.backgroundColor = .clear
         result.separatorStyle = .none
         result.contentInset = UIEdgeInsets(
@@ -83,11 +84,9 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
         result.register(view: FullConversationCell.self)
         result.dataSource = self
         result.delegate = self
-        
         if #available(iOS 15.0, *) {
             result.sectionHeaderTopPadding = 0
         }
-        
         return result
     }()
 
@@ -131,11 +130,12 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Note: This is a hack to ensure `isRTL` is initially gets run on the main thread so the value
         // is cached (it gets called on background threads and if it hasn't cached the value then it can
         // cause odd performance issues since it accesses UIKit)
         _ = CurrentAppContext().isRTL
+        //self.secureView.makeSecure()
         
         // Preparation
         SessionApp.homeViewController.mutate { $0 = self }
@@ -212,7 +212,6 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
                 appDelegate.syncConfigurationIfNeeded()
             }
         }
-        
         // Onion request path countries cache
         IP2Country.shared.populateCacheIfNeededAsync()
     }

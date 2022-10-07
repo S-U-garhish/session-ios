@@ -8,6 +8,7 @@ import SessionUtilitiesKit
 final class ConversationTitleView: UIView {
     private static let leftInset: CGFloat = 8
     private static let leftInsetWithCallButton: CGFloat = 54
+
     
     override var intrinsicContentSize: CGSize {
         return UIView.layoutFittingExpandedSize
@@ -20,7 +21,6 @@ final class ConversationTitleView: UIView {
         result.textColor = Colors.text
         result.font = .boldSystemFont(ofSize: Values.mediumFontSize)
         result.lineBreakMode = .byTruncatingTail
-        
         return result
     }()
 
@@ -41,14 +41,14 @@ final class ConversationTitleView: UIView {
         
         return result
     }()
-
+    
     // MARK: - Initialization
     
     init() {
         super.init(frame: .zero)
         
         addSubview(stackView)
-        
+        //addSubview(field)
         stackView.pin(to: self)
     }
 

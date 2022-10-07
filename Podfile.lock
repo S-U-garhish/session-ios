@@ -162,7 +162,7 @@ DEPENDENCIES:
   - ZXingObjC
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs:
     - AFNetworking
     - CocoaLumberjack
     - CryptoSwift
@@ -244,4 +244,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0e694576fbda3c10bbc762998183d97142b85896
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2
