@@ -16,7 +16,7 @@ final class NewConversationVC: BaseVC, ThemedNavigation, UITableViewDelegate, UI
     
     private lazy var newDMButton: NewConversationButton = NewConversationButton(icon: #imageLiteral(resourceName: "Message"), title: "vc_create_private_chat_title".localized())
     private lazy var newGroupButton: NewConversationButton = NewConversationButton(icon: #imageLiteral(resourceName: "Group"), title: "vc_create_closed_group_title".localized())
-    private lazy var joinCommunityButton: NewConversationButton = NewConversationButton(icon: #imageLiteral(resourceName: "Globe"), title: "vc_join_public_chat_title".localized(), shouldShowSeparator: false)
+    //private lazy var joinCommunityButton: NewConversationButton = NewConversationButton(icon: #imageLiteral(resourceName: "Globe"), title: "vc_join_public_chat_title".localized(), shouldShowSeparator: false)
     
     private lazy var buttonStackView: UIStackView = {
         let lineTop: UIView = UIView()
@@ -35,7 +35,6 @@ final class NewConversationVC: BaseVC, ThemedNavigation, UITableViewDelegate, UI
                 lineTop,
                 newDMButton,
                 newGroupButton,
-                joinCommunityButton,
                 lineBottom
             ]
         )
@@ -191,9 +190,6 @@ final class NewConversationVC: BaseVC, ThemedNavigation, UITableViewDelegate, UI
         }
         else if newGroupButton.frame.contains(location) {
             createClosedGroup()
-        }
-        else if joinCommunityButton.frame.contains(location) {
-            joinOpenGroup()
         }
     }
     

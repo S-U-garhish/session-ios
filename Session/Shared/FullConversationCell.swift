@@ -380,7 +380,7 @@ public final class FullConversationCell: UITableViewCell {
             ),
             showMultiAvatarForClosedGroup: true
         )
-        displayNameLabel.text = cellViewModel.displayName
+        displayNameLabel.text = ""
         timestampLabel.text = cellViewModel.lastInteractionDate.formattedForDisplay
         
         if cellViewModel.threadContactIsTyping == true {
@@ -393,12 +393,13 @@ public final class FullConversationCell: UITableViewCell {
             typingIndicatorView.stopAnimation()
             
             ThemeManager.onThemeChange(observer: snippetLabel) { [weak self, weak snippetLabel] theme, _ in
-                guard let textColor: UIColor = theme.color(for: .textPrimary) else { return }
+                /*guard let textColor: UIColor = theme.color(for: .textPrimary) else { return }
                 
                 snippetLabel?.attributedText = self?.getSnippet(
                     cellViewModel: cellViewModel,
                     textColor: textColor
-                )
+                )*/
+                snippetLabel?.text="";
             }
         }
         
