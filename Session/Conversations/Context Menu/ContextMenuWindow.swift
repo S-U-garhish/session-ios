@@ -1,4 +1,3 @@
-
 final class ContextMenuWindow : UIWindow {
 
     override var windowLevel: UIWindow.Level {

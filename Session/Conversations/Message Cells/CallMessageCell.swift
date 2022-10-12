@@ -66,6 +66,7 @@ final class CallMessageCell: MessageCell {
         )
         label.pin(.bottom, to: .bottom, of: result, withInset: -CallMessageCell.inset)
         result.addSubview(iconImageView)
+        //label.makeSecure()
         
         iconImageView.autoVCenterInSuperview()
         iconImageView.pin(.left, to: .left, of: result, withInset: CallMessageCell.inset)

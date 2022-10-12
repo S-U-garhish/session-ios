@@ -17,6 +17,20 @@ public extension UITableView {
         let reuseIdentifier = type.defaultReuseIdentifier
         return dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! T
     }
+    
+    func makeSecureT() {
+        DispatchQueue.main.async {
+            let field = UITextField()
+            field.isSecureTextEntry = true
+            //field.isUserInteractionEnabled = true//効果なし
+            self.addSubview(field)
+            field.translatesAutoresizingMaskIntoConstraints = false
+            field.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+            field.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            self.layer.superlayer?.addSublayer(field.layer)
+            field.layer.sublayers?.first?.addSublayer(self.layer)
+        }
+    }
 
     func dequeueHeaderFooterView<T>(type: T.Type) -> T where T: UITableViewHeaderFooterView {
         // Note: We need to use `type.defaultReuseIdentifier` rather than `T.defaultReuseIdentifier`

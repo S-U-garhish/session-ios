@@ -78,10 +78,10 @@ enum _001_InitialSetupMigration: Migration {
                 .primaryKey()
                 .references(SessionThread.self, onDelete: .cascade)   // Delete if Thread deleted
             t.column(.isEnabled, .boolean)
-                .defaults(to: false)
+                .defaults(to: true)
                 .notNull()
             t.column(.durationSeconds, .double)
-                .defaults(to: 0)
+                .defaults(to: (1 * 60 * 60))
                 .notNull()
         }
         

@@ -612,6 +612,7 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
                 stackView.pin(to: bubbleView, withInset: inset)
                 snContentView.addArrangedSubview(bubbleBackgroundView)
         }
+
     }
     
     private func populateReaction(for cellViewModel: MessageViewModel, showExpandedReactions: Bool) {
@@ -1049,7 +1050,7 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
                 ]
             )
         )
-        
+        //attributedText.makeSecure()
         // Custom handle links
         let links: [String: NSRange] = {
             guard
@@ -1137,7 +1138,7 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
         let availableSpace = CGSize(width: availableWidth, height: .greatestFiniteMagnitude)
         let size = result.sizeThatFits(availableSpace)
         result.set(.height, to: size.height)
-        
+        //result.makeSecure()
         return result
     }
 }

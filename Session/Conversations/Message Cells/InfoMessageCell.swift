@@ -31,6 +31,7 @@ final class InfoMessageCell: MessageCell {
         result.axis = .vertical
         result.alignment = .center
         result.spacing = Values.smallSpacing
+        //label.makeSecure()
         
         return result
     }()

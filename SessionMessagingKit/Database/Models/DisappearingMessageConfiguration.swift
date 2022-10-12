@@ -32,19 +32,19 @@ public struct DisappearingMessagesConfiguration: Codable, Identifiable, Fetchabl
 // MARK: - Mutation
 
 public extension DisappearingMessagesConfiguration {
-    static let defaultDuration: TimeInterval = (24 * 60 * 60)
+    static let defaultDuration: TimeInterval = (1 * 60 * 60)
     
     static func defaultWith(_ threadId: String) -> DisappearingMessagesConfiguration {
         return DisappearingMessagesConfiguration(
             threadId: threadId,
-            isEnabled: false,
+            isEnabled: true,
             durationSeconds: defaultDuration
         )
     }
     
     func with(
-        isEnabled: Bool? = nil,
-        durationSeconds: TimeInterval? = nil
+        isEnabled: Bool? = true,
+        durationSeconds: TimeInterval? = 60*60
     ) -> DisappearingMessagesConfiguration {
         return DisappearingMessagesConfiguration(
             threadId: threadId,

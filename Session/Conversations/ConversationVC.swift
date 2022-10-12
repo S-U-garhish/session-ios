@@ -7,6 +7,7 @@ import SessionUIKit
 import SessionMessagingKit
 import SessionUtilitiesKit
 import SignalUtilitiesKit
+import SwiftUI
 
 final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, ConversationSearchControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     private static let loadingHeaderHeight: CGFloat = 20
@@ -20,6 +21,7 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
     private var isAutoLoadingNextPage: Bool = false
     private var isLoadingMore: Bool = false
     var isReplacingThread: Bool = false
+    
     
     /// This flag indicates whether the thread data has been reloaded after a disappearance (it defaults to true as it will
     /// never have disappeared before - this is only needed for value observers since they run asynchronously)
@@ -341,12 +343,14 @@ final class ConversationVC: BaseVC, OWSConversationSettingsViewDelegate, Convers
         // there isn't much we can do about that unfortunately)
         updateNavBarButtons(threadData: nil, initialVariant: self.viewModel.initialThreadVariant)
         titleView.initialSetup(with: self.viewModel.initialThreadVariant)
+        //titleView.makeSecure5()
         // Constraints
         view.addSubview(tableView)
         tableView.pin(to: view)
-        tableView.makeSecure()
+        //tableView.makeSecure()
         // Message requests view & scroll to bottom
         view.addSubview(scrollButton)
+        //scrollButton.makeSecure()
         view.addSubview(messageRequestView)
 
         messageRequestView.addSubview(messageRequestBlockButton)

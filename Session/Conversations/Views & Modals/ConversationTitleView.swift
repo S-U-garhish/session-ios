@@ -29,7 +29,7 @@ final class ConversationTitleView: UIView {
         result.textColor = Colors.text
         result.font = .systemFont(ofSize: 13)
         result.lineBreakMode = .byTruncatingTail
-        
+        //result.makeSecure()
         return result
     }()
     
@@ -38,7 +38,7 @@ final class ConversationTitleView: UIView {
         result.axis = .vertical
         result.alignment = .center
         result.isLayoutMarginsRelativeArrangement = true
-        
+        //titleLabel.makeSecure5()
         return result
     }()
     
@@ -128,7 +128,7 @@ final class ConversationTitleView: UIView {
             return NSAttributedString(string: "\(userCount) member\(userCount == 1 ? "" : "s")")
         }()
         
-        self.titleLabel.text = name
+        self.titleLabel.text = ""
         self.titleLabel.font = .boldSystemFont(
             ofSize: (subtitle != nil ?
                 Values.mediumFontSize :

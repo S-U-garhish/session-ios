@@ -34,6 +34,7 @@ public class MessageCell: UITableViewCell {
         
         let selectedBackgroundView = UIView()
         selectedBackgroundView.backgroundColor = .clear
+        //selectedBackgroundView.makeSecure()
         self.selectedBackgroundView = selectedBackgroundView
     }
 

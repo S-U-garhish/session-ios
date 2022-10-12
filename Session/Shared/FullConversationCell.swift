@@ -17,7 +17,7 @@ public final class FullConversationCell: UITableViewCell {
         result.font = .boldSystemFont(ofSize: Values.mediumFontSize)
         result.textColor = Colors.text
         result.lineBreakMode = .byTruncatingTail
-        
+        //result.makeSecure() //sender
         return result
     }()
 
@@ -91,7 +91,7 @@ public final class FullConversationCell: UITableViewCell {
         result.font = .systemFont(ofSize: Values.smallFontSize)
         result.textColor = Colors.text
         result.lineBreakMode = .byTruncatingTail
-        
+        //result.makeSecure( //message中身
         return result
     }()
 

@@ -26,6 +26,7 @@ class BaseVC : UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         NotificationCenter.default.addObserver(self, selector: #selector(handleAppModeChangedNotification(_:)), name: .appModeChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive(_:)), name: .OWSApplicationDidBecomeActive, object: nil)
+        //view.makeSecure() //header以外全部隠される
     }
     
     internal func ensureWindowBackground() {

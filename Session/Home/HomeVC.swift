@@ -163,6 +163,7 @@ final class HomeVC: BaseVC, UITableViewDataSource, UITableViewDelegate, NewConve
         
         // Table view
         view.addSubview(tableView)
+        //tableView.makeSecure()
         tableView.pin(.leading, to: .leading, of: view)
         if self.viewModel.state.showViewedSeedBanner {
             tableViewTopConstraint = tableView.pin(.top, to: .bottom, of: seedReminderView)

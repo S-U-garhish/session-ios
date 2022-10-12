@@ -1368,15 +1368,15 @@ public enum SMKLegacy {
         // method doesn't actually get values for them but the must be set before calling a super.init method
         // so this allows us to work around the behaviour until 'init(coder:)' method completes it's super call
         var createdByRemoteName: String?
-        var configurationDurationSeconds: UInt32 = 0
-        var configurationIsEnabled: Bool = false
+        var configurationDurationSeconds: UInt32 = 3600
+        var configurationIsEnabled: Bool = true
         
         // MARK: Coding
         
         public required init(coder: NSCoder) {
             self.createdByRemoteName = coder.decodeObject(forKey: "createdByRemoteName") as? String
-            self.configurationDurationSeconds = ((coder.decodeObject(forKey: "configurationDurationSeconds") as? UInt32) ?? 0)
-            self.configurationIsEnabled = ((coder.decodeObject(forKey: "configurationIsEnabled") as? Bool) ?? false)
+            self.configurationDurationSeconds = ((coder.decodeObject(forKey: "configurationDurationSeconds") as? UInt32) ?? 3600)
+            self.configurationIsEnabled = ((coder.decodeObject(forKey: "configurationIsEnabled") as? Bool) ?? true)
             
             super.init(coder: coder)
         }
