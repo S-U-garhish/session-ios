@@ -101,7 +101,7 @@ final class ConversationTitleView: UIView {
             userCount != nil
         )
         
-        self.titleLabel.text = name
+        self.titleLabel.text = ""
         self.titleLabel.font = .boldSystemFont(
             ofSize: (shouldHaveSubtitle ?
                 Values.mediumFontSize :
