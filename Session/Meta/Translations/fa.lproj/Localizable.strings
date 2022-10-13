@@ -190,8 +190,8 @@
 "PUSH_MANAGER_MARKREAD" = "علامت‌گذاری به عنوان خوانده‌شده";
 /* Notification action button title */
 "PUSH_MANAGER_REPLY" = "پاسخ";
-/* Description of how and why Session iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "برای باز کردن Session هویت خود را احراز کنید.";
+/* Description of how and why ZILAF iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "برای باز کردن ZILAF هویت خود را احراز کنید.";
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "احراز هویت ناموفق بود";
 /* alert title when user attempts to leave the send media flow when they have an in-progress album */
@@ -246,64 +246,64 @@
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "شما پیام‌های محوشونده را غیرفعال کردید.";
 /* Info message embedding a {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "YOU_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "شما زمان محوشدن پیام‌ها را به %@ تنظیم کردید.";
-// MARK: - Session
+// MARK: - ZILAF
 "continue_2" = "ادامه ";
 "copy" = "کپی";
 "invalid_url" = "URL غیرمعتبر";
 "next" = "بعد";
 "share" = "به‌اشتراک‌گذاری";
-"invalid_session_id" = "شناسه‌ی Session نامعتبر است.";
+"invalid_session_id" = "شناسه‌ی ZILAF نامعتبر است.";
 "cancel" = "لغو";
-"your_session_id" = "شناسه Session شما";
-"vc_landing_title_2" = "Session شما از اینجا شروع می‌شود...";
-"vc_landing_register_button_title" = "شناسه‌ی Session را ایجاد کنید";
-"vc_landing_restore_button_title" = "Session خود را ادامه دهید";
+"your_session_id" = "شناسه ZILAF شما";
+"vc_landing_title_2" = "ZILAF شما از اینجا شروع می‌شود...";
+"vc_landing_register_button_title" = "شناسه‌ی ZILAF را ایجاد کنید";
+"vc_landing_restore_button_title" = "ZILAF خود را ادامه دهید";
 "vc_landing_link_button_title" = "پیوند به یک حساب کاربری موجود";
-"view_fake_chat_bubble_1" = "Session چیست؟";
-"view_fake_chat_bubble_2" = "Session یک برنامه پیام‌رسان غیرمتمرکز و رمزگذاری شده است.";
+"view_fake_chat_bubble_1" = "ZILAF چیست؟";
+"view_fake_chat_bubble_2" = "ZILAF یک برنامه پیام‌رسان غیرمتمرکز و رمزگذاری شده است.";
 "view_fake_chat_bubble_3" = "پس اطلاعات شخصی من یا داده‌های گفت‌وگو‌هایم جمع‌آوری نمی‌شود؟ چگونه کار می‌کند؟";
-"view_fake_chat_bubble_4" = "Session با استفاده از ترکیبی از فناوری‌های پیشرفته مسیریابی ناشناس و رمزگذاری سرتاسری این کار را انجام می‌دهد.";
+"view_fake_chat_bubble_4" = "ZILAF با استفاده از ترکیبی از فناوری‌های پیشرفته مسیریابی ناشناس و رمزگذاری سرتاسری این کار را انجام می‌دهد.";
 "view_fake_chat_bubble_5" = "یک دوست هیچ‌وقت به دوستان خود اجازه استفاده از پیام‌رسان‌های در معرض خطر را نمی‌دهد.";
-"vc_register_title" = "به شناسه‌ی Session خود سلام کنید";
-"vc_register_explanation" = "شناسه‌ی Session شما آدرس منحصر به فردی است که افراد می‌توانند از طریق آن با شما در Session تماس بگیرند. شناسه‌ی Session شما، بدون اتصال با هویت واقعی شما، کاملاً ناشناس و خصوصی است.";
+"vc_register_title" = "به شناسه‌ی ZILAF خود سلام کنید";
+"vc_register_explanation" = "شناسه‌ی ZILAF شما آدرس منحصر به فردی است که افراد می‌توانند از طریق آن با شما در ZILAF تماس بگیرند. شناسه‌ی ZILAF شما، بدون اتصال با هویت واقعی شما، کاملاً ناشناس و خصوصی است.";
 "vc_restore_title" = "حساب کاربری خود را بازیابی کنید";
 "vc_restore_explanation" = "عبارت بازیابی را که هنگام نام‌نویسی برای بازیابی حساب به شما داده شده، وارد کنید.";
 "vc_restore_seed_text_field_hint" = "عبارت بازیابی خود را وارد کنید";
 "vc_link_device_title" = "اتصال دستگاه";
 "vc_link_device_scan_qr_code_tab_title" = "کد QR را اسکن کنید";
 "vc_display_name_title_2" = "نام خود را برای نمایش انتخاب کنید";
-"vc_display_name_explanation" = "این نام شما هنگام استفاده از Session خواهد بود. این نام می‌تواند نام واقعی شما، نام مستعار یا هر چیز دیگری که دوست دارید، باشد.";
+"vc_display_name_explanation" = "این نام شما هنگام استفاده از ZILAF خواهد بود. این نام می‌تواند نام واقعی شما، نام مستعار یا هر چیز دیگری که دوست دارید، باشد.";
 "vc_display_name_text_field_hint" = "نام نمایشی را وارد کنید";
 "vc_display_name_display_name_missing_error" = "لطفا نام نمایشی را انتخاب کنید";
 "vc_display_name_display_name_too_long_error" = "لطفا نام نمایشی کوتاه‌تری انتخاب کنید";
 "vc_pn_mode_recommended_option_tag" = "گزینه پیشنهادی";
 "vc_pn_mode_no_option_picked_modal_title" = "لطفا یک گزینه را انتخاب کنید";
 "vc_home_empty_state_message" = "فهرست مخاطبان شما خالی است.";
-"vc_home_empty_state_button_title" = "شروع Session";
+"vc_home_empty_state_button_title" = "شروع ZILAF";
 "vc_seed_title" = "عبارت بازیابی شما";
 "vc_seed_title_2" = "این عبارت بازیابی شماست";
-"vc_seed_explanation" = "عبارت بازیابی شما کلید اصلی شناسه‌ی Session شما است - در صورت عدم دسترسی به دستگاه خود می توانید از آن برای بازگرداندن شناسه‌ی Session خود استفاده کنید. عبارت بازیابی خود را در مکانی امن ذخیره کنید و آن را به کسی ندهید.";
+"vc_seed_explanation" = "عبارت بازیابی شما کلید اصلی شناسه‌ی ZILAF شما است - در صورت عدم دسترسی به دستگاه خود می توانید از آن برای بازگرداندن شناسه‌ی ZILAF خود استفاده کنید. عبارت بازیابی خود را در مکانی امن ذخیره کنید و آن را به کسی ندهید.";
 "vc_seed_reveal_button_title" = "نگه دارید تا نشان داده شود";
 "view_seed_reminder_subtitle_1" = "با ذخیره کردن عبارت بازیابی، از حساب خود را محافظت کنید";
-"view_seed_reminder_subtitle_2" = "برای فاش کردن عبارت بازیابی، بر روی کلمات redacted ضربه زده و نگه دارید، سپس با خیال راحت آن را ذخیره کنید تا از شناسه‌ی Session خود محافظت نمایید.";
+"view_seed_reminder_subtitle_2" = "برای فاش کردن عبارت بازیابی، بر روی کلمات redacted ضربه زده و نگه دارید، سپس با خیال راحت آن را ذخیره کنید تا از شناسه‌ی ZILAF خود محافظت نمایید.";
 "view_seed_reminder_subtitle_3" = "حتماً عبارت بازیابی خود را در مکانی امن ذخیره کنید";
 "vc_path_title" = "مسیر";
-"vc_path_explanation" = "اپ Session، ‌آی‌پی شما را با استفاده از فرستادن پیام‌های‌تان از طریق چندین سرویسِ گره در شبکه غیرمتمرکز Session مخفی می‌کند. اینها کشورهایی هستند که اتصال شما در حال حاضر از طریق آن فراخوانی می‌شوند:";
+"vc_path_explanation" = "اپ ZILAF، ‌آی‌پی شما را با استفاده از فرستادن پیام‌های‌تان از طریق چندین سرویسِ گره در شبکه غیرمتمرکز ZILAF مخفی می‌کند. اینها کشورهایی هستند که اتصال شما در حال حاضر از طریق آن فراخوانی می‌شوند:";
 "vc_path_device_row_title" = "شما";
 "vc_path_guard_node_row_title" = "گره ورودی";
 "vc_path_service_node_row_title" = "گره سرویس";
 "vc_path_destination_row_title" = "مقصد";
 "vc_path_learn_more_button_title" = "بیشتر بدانید";
 "vc_create_private_chat_title" = "پیام جدید";
-"vc_create_private_chat_enter_session_id_tab_title" = "شناسه Session را وارید کنید";
+"vc_create_private_chat_enter_session_id_tab_title" = "شناسه ZILAF را وارید کنید";
 "vc_create_private_chat_scan_qr_code_tab_title" = "اسکن کد QR";
-"vc_enter_public_key_explanation" = "یک مکالمه جدید را با وارد کردن شناسه Session شخصی شروع کنید یا شناسه جلسه خود را با آنها به اشتراک بگذارید.";
-"vc_scan_qr_code_camera_access_explanation" = "برای اسکن کدهای Session ،QR نیاز به دسترسی به دوربین دارد";
+"vc_enter_public_key_explanation" = "یک مکالمه جدید را با وارد کردن شناسه ZILAF شخصی شروع کنید یا شناسه جلسه خود را با آنها به اشتراک بگذارید.";
+"vc_scan_qr_code_camera_access_explanation" = "برای اسکن کدهای ZILAF ،QR نیاز به دسترسی به دوربین دارد";
 "vc_scan_qr_code_grant_camera_access_button_title" = "اعطای دسترسی دوربین";
 "vc_create_closed_group_title" = "ایجاد گروه";
 "vc_create_closed_group_text_field_hint" = "وارد کردن یک نام گروه";
 "vc_create_closed_group_empty_state_message" = "هنوز هیچ مخاطبی ندارید";
-"vc_create_closed_group_empty_state_button_title" = "شروع یک Session";
+"vc_create_closed_group_empty_state_button_title" = "شروع یک ZILAF";
 "vc_create_closed_group_group_name_missing_error" = "لطفاً یک نام گروه را وارد کنید";
 "vc_create_closed_group_group_name_too_long_error" = "لطفاً یک نام گروه کوتاه‌تر را وارد کنید";
 "vc_create_closed_group_too_many_group_members_error" = "یک گروه نمی‌تواند بیش از ۱۰۰ عضو داشته باشد.";
@@ -323,23 +323,23 @@
 "vc_qr_code_view_my_qr_code_tab_title" = "مشاهده کد QR من";
 "vc_qr_code_view_scan_qr_code_tab_title" = "اسکن کد QR";
 "vc_qr_code_view_scan_qr_code_explanation" = "برای شروع مکالمه با دیگران، کد QR شخصی را اسکن کنید";
-"vc_view_my_qr_code_explanation" = "این کد QR شماست. سایر کاربران می‌توانند برای شروع Session با شما آن را اسکن کنند.";
+"vc_view_my_qr_code_explanation" = "این کد QR شماست. سایر کاربران می‌توانند برای شروع ZILAF با شما آن را اسکن کنند.";
 // MARK: - Not Yet Translated
 "fast_mode_explanation" = "با استفاده از سرورهای اطلاع رسانی اپل، شما به صورت سریع و مطمئن از پیام‌های جدید مطلع می‌شوید.";
 "fast_mode" = "حالت سریع";
-"slow_mode_explanation" = "Session هرازگاهی در پس زمینه وجود پیام‌های جدید را بررسی می‌کند.";
+"slow_mode_explanation" = "ZILAF هرازگاهی در پس زمینه وجود پیام‌های جدید را بررسی می‌کند.";
 "slow_mode" = "حالت آهسته";
 "vc_pn_mode_title" = "اعلان‌های پیام";
 "vc_link_device_recovery_phrase_tab_title" = "عبارت بازیابی";
 "vc_link_device_scan_qr_code_explanation" = "برای دیدن کد QR خود، در دستگاه دیگرتان به «تنظیمات ← عبارت بازیابی» مراجعه کنید.";
 "vc_enter_recovery_phrase_title" = "عبارت بازیابی";
 "vc_enter_recovery_phrase_explanation" = "برای وصل کردن دستگاهتان، عبارت بازیابی که در زمان ثبت نام به شما داده شده بود را وارد کنید.";
-"vc_enter_public_key_text_field_hint" = "شناسه Session یا نام ONS را وارید کنید";
+"vc_enter_public_key_text_field_hint" = "شناسه ZILAF یا نام ONS را وارید کنید";
 "admin_group_leave_warning" = "به دلیل اینکه شما مدیر گروه هستید، این گروه برای همه اعضا ی گروه پاک میشود. این قابل بازگشت نیست.";
 "vc_join_open_group_suggestions_title" = "یا به یکی از این محلق شوید ...";
 "vc_settings_invite_a_friend_button_title" = "دعوت از یک دوست";
 "copied" = "کپی‌شده";
-"vc_conversation_settings_copy_session_id_button_title" = "کپی کردن شناسه‌ی Session شما";
+"vc_conversation_settings_copy_session_id_button_title" = "کپی کردن شناسه‌ی ZILAF شما";
 "vc_conversation_input_prompt" = "پیام";
 "vc_conversation_voice_message_cancel_message" = "برای کنسل کردن به کناره بکشید";
 "modal_download_attachment_title" = "آیا به %@ اعتماد میکنید؟";
@@ -353,15 +353,15 @@
 "modal_blocked_explanation" = "آیا مطمئن هستید که میخواهید %@ را از حالت مسدود خارج کنید؟";
 "modal_blocked_button_title" = "رفع مسدودی";
 "modal_link_previews_title" = "فعال‌سازی پیش‌نمایش لینک؟";
-"modal_link_previews_explanation" = "با فعال کردن این گزینه، پیش‌نمایش لینک‌ها در پیام‌های ارسالی و دریافتی دیده می‌شود. این گزینه می‌تواند مفید باشد اما Session باید با سایت ارتباط برقرار کند تا پیش‌نمایش را نشان دهد. شما می‌توانید همیشه در تنظیمات این پیش‌نمایش را غیرفعال کنید.";
+"modal_link_previews_explanation" = "با فعال کردن این گزینه، پیش‌نمایش لینک‌ها در پیام‌های ارسالی و دریافتی دیده می‌شود. این گزینه می‌تواند مفید باشد اما ZILAF باید با سایت ارتباط برقرار کند تا پیش‌نمایش را نشان دهد. شما می‌توانید همیشه در تنظیمات این پیش‌نمایش را غیرفعال کنید.";
 "modal_link_previews_button_title" = "فعال سازی";
-"vc_share_title" = "اشتراک گذاری با Session";
+"vc_share_title" = "اشتراک گذاری با ZILAF";
 "vc_share_loading_message" = "آماده سازی پیوست‌ها...";
 "vc_share_sending_message" = "در حال ارسال...";
 "vc_share_link_previews_unsecure" = "پیش نمایش برای لینک ناامن کامل نشد";
 "vc_share_link_previews_error" = "ناتوان برای بارگذاری پیش نمایش";
 "vc_share_link_previews_disabled_title" = "پیش نمایش های لینک غیرفعال شد";
-"vc_share_link_previews_disabled_explanation" = "با فعال کردن این گزینه، پیش‌نمایش لینک‌ها در پیام‌های ارسالی و دریافتی دیده می‌شود. این گزینه می‌تواند مفید باشد اما Session باید با سایت ها ارتباط برقرار کند تا پیش‌نمایش را نشان دهد. n\\شما می‌توانید در تنظیمات این پیش‌نمایش را غیرفعال کنید.";
+"vc_share_link_previews_disabled_explanation" = "با فعال کردن این گزینه، پیش‌نمایش لینک‌ها در پیام‌های ارسالی و دریافتی دیده می‌شود. این گزینه می‌تواند مفید باشد اما ZILAF باید با سایت ها ارتباط برقرار کند تا پیش‌نمایش را نشان دهد. n\\شما می‌توانید در تنظیمات این پیش‌نمایش را غیرفعال کنید.";
 "view_open_group_invitation_description" = "باز کردن دعوت به گروه";
 "vc_conversation_settings_invite_button_title" = "اضافه‌کردن اعضا";
 "modal_send_seed_title" = "هشدار";
@@ -409,7 +409,7 @@
 "MESSAGE_REQUESTS_CLEAR_ALL_CONFIRMATION_ACTON" = "پاک کردن";
 "MESSAGE_REQUESTS_DELETE_CONFIRMATION_ACTON" = "آیا مطمئن هستید که می خواهید این درخواست پیام را رد کنید؟";
 "MESSAGE_REQUESTS_BLOCK_CONFIRMATION_ACTON" = "آیا مطمئن هستید که می‌خواهید این مخاطب را مسدود کنید؟";
-"MESSAGE_REQUESTS_INFO" = "ارسال پیام به این کاربر درخواست پیام او را به صورت خودکار قبول می‌کند و باعث آشکار شدن کد شناسایی Session شما میشود.";
+"MESSAGE_REQUESTS_INFO" = "ارسال پیام به این کاربر درخواست پیام او را به صورت خودکار قبول می‌کند و باعث آشکار شدن کد شناسایی ZILAF شما میشود.";
 "MESSAGE_REQUESTS_ACCEPTED" = "درخواست پیام شما قبول شد.";
 "MESSAGE_REQUESTS_NOTIFICATION" = "شما درخواست پیام جدیدی دارید";
 "TXT_HIDE_TITLE" = "پنهان کردن";
@@ -448,7 +448,7 @@
 "SHOW_THREAD_BUTTON_TITLE" = "نمایش گفتگو";
 /* notification body */
 "SEND_FAILED_NOTIFICATION_BODY" = "پیام شما ارسال نشد.";
-"INVALID_SESSION_ID_MESSAGE" = "لطفاً شناسه Session را مجدد بررسی کنید.";
+"INVALID_SESSION_ID_MESSAGE" = "لطفاً شناسه ZILAF را مجدد بررسی کنید.";
 "INVALID_RECOVERY_PHRASE_MESSAGE" = "لطفاً شناسه بازیابی را مجدد بررسی کنید.";
 "MEDIA_TAB_TITLE" = "مدیا";
 "DOCUMENT_TAB_TITLE" = "مدارک";
@@ -483,8 +483,8 @@
 "JOIN_COMMUNITY_BUTTON_TITLE" = "محلق شدن";
 "PRIVACY_TITLE" = "حریم خصوصی";
 "PRIVACY_SECTION_SCREEN_SECURITY" = "امنیت صفحه";
-"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_TITLE" = "قفل Session";
-"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_DESCRIPTION" = " برای باز کردن قفل Session به شناسه لمسی، شناسه صورت و یا رمز عبوری ضرورت است.";
+"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_TITLE" = "قفل ZILAF";
+"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_DESCRIPTION" = " برای باز کردن قفل ZILAF به شناسه لمسی، شناسه صورت و یا رمز عبوری ضرورت است.";
 "PRIVACY_SECTION_READ_RECEIPTS" = "رسیدهای خواندن";
 "PRIVACY_READ_RECEIPTS_TITLE" = "رسیدهای خواندن";
 "PRIVACY_READ_RECEIPTS_DESCRIPTION" = "رسیدهای خواندن در چت‌های یک به یک روان شود.";
@@ -538,9 +538,9 @@
 "APPEARANCE_NIGHT_MODE_TOGGLE" = "مطابق‌سازی تنظیمات سیستم";
 "HELP_TITLE" = "کمک";
 "HELP_REPORT_BUG_TITLE" = "گزارش خرابی";
-"HELP_REPORT_BUG_DESCRIPTION" = "گزارش‌های خود را صادر کنید، سپس فایل را از طریق Session's Help Desk آپلود کنید.";
+"HELP_REPORT_BUG_DESCRIPTION" = "گزارش‌های خود را صادر کنید، سپس فایل را از طریق ZILAF's Help Desk آپلود کنید.";
 "HELP_REPORT_BUG_ACTION_TITLE" = "صدور گزارش‌ها";
-"HELP_TRANSLATE_TITLE" = "ترجمه Session";
+"HELP_TRANSLATE_TITLE" = "ترجمه ZILAF";
 "HELP_FEEDBACK_TITLE" = "قدردان نظریات شما هستیم.";
 "HELP_FAQ_TITLE" = "سؤالات متداول";
 "HELP_SUPPORT_TITLE" = "همایت";
@@ -574,7 +574,7 @@
 "GROUP_TITLE_MEMBERS" = "اعضا";
 "GROUP_TITLE_FALLBACK" = "گروه";
 "DM_ERROR_DIRECT_BLINDED_ID" = "فقط از داخل یک انجمن می‌توانید به شناسه‌های نابینا پیام ارسال کنید";
-"DM_ERROR_INVALID" = "لطفاً شناسه Session یا نام ONS را بررسی کنید و دوباره امتحان کنید";
+"DM_ERROR_INVALID" = "لطفاً شناسه ZILAF یا نام ONS را بررسی کنید و دوباره امتحان کنید";
 "COMMUNITY_ERROR_INVALID_URL" = "";
 "COMMUNITY_ERROR_GENERIC" = "نمی‌توانید محلق شوید";
 "DISAPPERING_MESSAGES_TITLE" = "پیام‌ها ناپدید میشوند";

@@ -35,12 +35,12 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
         case path
         case privacy
         case notifications
-        case conversations
+        //case conversations
         case messageRequests
         case appearance
-        case inviteAFriend
+        //case inviteAFriend
         case recoveryPhrase
-        case help
+        //case help
         case clearData
     }
     
@@ -279,7 +279,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                 )
                             }
                         ),
-                        SessionCell.Info(
+                        /*SessionCell.Info(
                             id: .conversations,
                             leftAccessory: .icon(
                                 UIImage(named: "icon_msg")?
@@ -291,7 +291,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                     SessionTableViewController(viewModel: ConversationSettingsViewModel())
                                 )
                             }
-                        ),
+                        ),*/
                         SessionCell.Info(
                             id: .messageRequests,
                             leftAccessory: .icon(
@@ -314,7 +314,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                 self?.transitionToScreen(AppearanceViewController())
                             }
                         ),
-                        SessionCell.Info(
+                        /*SessionCell.Info(
                             id: .inviteAFriend,
                             leftAccessory: .icon(
                                 UIImage(named: "icon_invite")?
@@ -332,7 +332,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                     transitionType: .present
                                 )
                             }
-                        ),
+                        ),*/
                         SessionCell.Info(
                             id: .recoveryPhrase,
                             leftAccessory: .icon(
@@ -344,7 +344,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                 self?.transitionToScreen(SeedModal(), transitionType: .present)
                             }
                         ),
-                        SessionCell.Info(
+                        /*SessionCell.Info(
                             id: .help,
                             leftAccessory: .icon(
                                 UIImage(named: "icon_help")?
@@ -356,7 +356,7 @@ class SettingsViewModel: SessionTableViewModel<SettingsViewModel.NavButton, Sett
                                     SessionTableViewController(viewModel: HelpViewModel())
                                 )
                             }
-                        ),
+                        ),*/
                         SessionCell.Info(
                             id: .clearData,
                             leftAccessory: .icon(

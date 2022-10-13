@@ -67,12 +67,13 @@ class VersionFooterView: UIView {
     // MARK: - Content
     
     private func setupViewHierarchy() {
-        addSubview(logoImageView)
+        //addSubview(logoImageView)
         addSubview(versionLabel)
         
-        logoImageView.pin(.top, to: .top, of: self, withInset: Values.mediumSpacing)
-        logoImageView.center(.horizontal, in: self, withInset: -2)
-        versionLabel.pin(.top, to: .bottom, of: logoImageView, withInset: Values.mediumSpacing)
+        //logoImageView.pin(.top, to: .top, of: self, withInset: Values.mediumSpacing)
+        //logoImageView.center(.horizontal, in: self, withInset: -2)
+        versionLabel.pin(.top, to: .bottom, of: self, withInset: -1.5 * Values.mediumSpacing)
+        //versionLabel.center(.horizontal, in: self, withInset: -2)
         versionLabel.pin(.left, to: .left, of: self)
         versionLabel.pin(.right, to: .right, of: self)
     }

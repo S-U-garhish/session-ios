@@ -1606,7 +1606,6 @@
 		C3ECBF7A257056B700EA7FCE /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		C3F0A52F255C80BC007BE2A3 /* NoopNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoopNotificationsManager.swift; sourceTree = "<group>"; };
 		C3F0A5B2255C915C007BE2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C3F0A5EB255C970D007BE2A3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Secure.swift"; sourceTree = "<group>"; };
 		D0CE0424239A1574F683D2D7 /* Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2179CFB16BB0B3A0006F3AB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -2214,7 +2213,6 @@
 				B83F2B87240CB75A000A54AB /* UIImage+Scaling.swift */,
 				FD1C98E3282E3C5B00B76F9E /* UINavigationBar+Utilities.swift */,
 				FD848B8E283EF2A8000E298B /* UIScrollView+Utilities.swift */,
-				C31A6C59247F214E001123EF /* UIView+Glow.swift */,
 				CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */,
 				C3548F0724456AB6009433A8 /* UIView+Wrapping.swift */,
 				7BAADFCD27B215FE007BCF92 /* UIView+Draggable.swift */,
@@ -7168,8 +7166,8 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				CURRENT_PROJECT_VERSION = 383;
+				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -7240,8 +7238,8 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				CURRENT_PROJECT_VERSION = 383;
+				DEVELOPMENT_TEAM = ZZ9DH4MY42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",

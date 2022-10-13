@@ -190,8 +190,8 @@
 "PUSH_MANAGER_MARKREAD" = "Markeer als gelezen";
 /* Notification action button title */
 "PUSH_MANAGER_REPLY" = "Antwoord";
-/* Description of how and why Session iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticeer om Session te openen.";
+/* Description of how and why ZILAF iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticeer om ZILAF te openen.";
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Verificatie mislukt";
 /* alert title when user attempts to leave the send media flow when they have an in-progress album */
@@ -246,33 +246,33 @@
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Je hebt zelf-wissende berichten uitgeschakeld.";
 /* Info message embedding a {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "YOU_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "U heeft de timer voor zelf-wissende berichten op %@ ingesteld";
-// MARK: - Session
+// MARK: - ZILAF
 "continue_2" = "Doorgaan";
 "copy" = "Kopieer";
 "invalid_url" = "Ongeldige URL";
 "next" = "Volgende";
 "share" = "Delen";
-"invalid_session_id" = "Verkeerde Session ID";
+"invalid_session_id" = "Verkeerde ZILAF ID";
 "cancel" = "Annuleren";
-"your_session_id" = "Uw Session-ID";
+"your_session_id" = "Uw ZILAF-ID";
 "vc_landing_title_2" = "Uw Sessie begint hier...";
-"vc_landing_register_button_title" = "Session-ID aanmaken";
+"vc_landing_register_button_title" = "ZILAF-ID aanmaken";
 "vc_landing_restore_button_title" = "Doorgaan met je sessie";
 "vc_landing_link_button_title" = "Koppel een apparaat";
-"view_fake_chat_bubble_1" = "Wat is Session?";
+"view_fake_chat_bubble_1" = "Wat is ZILAF?";
 "view_fake_chat_bubble_2" = "Het is een gedecentraliseerde, versleutelde berichten-app";
 "view_fake_chat_bubble_3" = "Dus het verzamelt niet mijn persoonlijke informatie of de metagegevens van mijn gesprek? Hoe werkt het?";
 "view_fake_chat_bubble_4" = "Met behulp van een combinatie van geavanceerde anonieme routing en end-to-end encryptietechnologieën.";
 "view_fake_chat_bubble_5" = "Vrienden laten vrienden geen gecompromitteerde berichten apps gebruiken. Graag gedaan.";
-"vc_register_title" = "Zeg hallo tegen uw Session-ID";
-"vc_register_explanation" = "Uw Session-ID is het unieke adres dat mensen kunnen gebruiken om contact met u op te nemen via Session. Zonder verbinding met je echte identiteit, is je Session-ID volledig anoniem en privé.";
+"vc_register_title" = "Zeg hallo tegen uw ZILAF-ID";
+"vc_register_explanation" = "Uw ZILAF-ID is het unieke adres dat mensen kunnen gebruiken om contact met u op te nemen via ZILAF. Zonder verbinding met je echte identiteit, is je ZILAF-ID volledig anoniem en privé.";
 "vc_restore_title" = "Account herstellen";
 "vc_restore_explanation" = "Voer de herstel zin in die je hebt gekregen toen je je hebt aangemeld om je account te herstellen.";
 "vc_restore_seed_text_field_hint" = "Voer uw herstel zin in";
 "vc_link_device_title" = "Koppel een apparaat";
 "vc_link_device_scan_qr_code_tab_title" = "Scan QR-code";
 "vc_display_name_title_2" = "Kies je weergavenaam";
-"vc_display_name_explanation" = "Dit is je naam wanneer je Session gebruikt. Het kan je echte naam zijn, een alias, of wat je maar wilt.";
+"vc_display_name_explanation" = "Dit is je naam wanneer je ZILAF gebruikt. Het kan je echte naam zijn, een alias, of wat je maar wilt.";
 "vc_display_name_text_field_hint" = "Kies een weergavenaam";
 "vc_display_name_display_name_missing_error" = "Voer a. u. b. een weergave naam in";
 "vc_display_name_display_name_too_long_error" = "Kies een kortere weergavenaam";
@@ -282,23 +282,23 @@
 "vc_home_empty_state_button_title" = "Sessie starten";
 "vc_seed_title" = "Uw Herstel Zin";
 "vc_seed_title_2" = "Maak kennis met uw herstel zin";
-"vc_seed_explanation" = "Uw herstel zin is de hoofdsleutel van uw Session-ID - u kunt deze gebruiken om uw Session-ID te herstellen als u de toegang tot uw apparaat verliest. Sla uw herstel zin op een veilige plek op en geef deze aan niemand op.";
+"vc_seed_explanation" = "Uw herstel zin is de hoofdsleutel van uw ZILAF-ID - u kunt deze gebruiken om uw ZILAF-ID te herstellen als u de toegang tot uw apparaat verliest. Sla uw herstel zin op een veilige plek op en geef deze aan niemand op.";
 "vc_seed_reveal_button_title" = "Ingedrukt houden om te onthullen";
 "view_seed_reminder_subtitle_1" = "Beveilig je account door je herstel zin op te slaan";
-"view_seed_reminder_subtitle_2" = "Houd de aangepaste woorden ingedrukt om uw herstelzin te onthullen, en sla het vervolgens veilig op om uw Session-ID te beveiligen.";
+"view_seed_reminder_subtitle_2" = "Houd de aangepaste woorden ingedrukt om uw herstelzin te onthullen, en sla het vervolgens veilig op om uw ZILAF-ID te beveiligen.";
 "view_seed_reminder_subtitle_3" = "Zorg ervoor dat u uw herstel zin op een veilige plek opslaat";
 "vc_path_title" = "Locatie";
-"vc_path_explanation" = "Session verbergt uw IP door uw berichten te routeren via meerdere Service Nodes in het gedecentraliseerde netwerk van Session. Dit zijn de landen die uw verbinding momenteel doorvoert:";
+"vc_path_explanation" = "ZILAF verbergt uw IP door uw berichten te routeren via meerdere Service Nodes in het gedecentraliseerde netwerk van ZILAF. Dit zijn de landen die uw verbinding momenteel doorvoert:";
 "vc_path_device_row_title" = "U";
 "vc_path_guard_node_row_title" = "Invoer node";
 "vc_path_service_node_row_title" = "Service node";
 "vc_path_destination_row_title" = "Bestemming";
 "vc_path_learn_more_button_title" = "Kom meer te weten";
 "vc_create_private_chat_title" = "Nieuwe sessie";
-"vc_create_private_chat_enter_session_id_tab_title" = "Voer Session-ID in";
+"vc_create_private_chat_enter_session_id_tab_title" = "Voer ZILAF-ID in";
 "vc_create_private_chat_scan_qr_code_tab_title" = "Scan QR-code";
-"vc_enter_public_key_explanation" = "Start a new conversation by entering someone's Session ID or share your Session ID with them.";
-"vc_scan_qr_code_camera_access_explanation" = "Session heeft toegang nodig tot de camera om QR codes te scannen";
+"vc_enter_public_key_explanation" = "Start a new conversation by entering someone's ZILAF ID or share your ZILAF ID with them.";
+"vc_scan_qr_code_camera_access_explanation" = "ZILAF heeft toegang nodig tot de camera om QR codes te scannen";
 "vc_scan_qr_code_grant_camera_access_button_title" = "Toegang tot camera verlenen";
 "vc_create_closed_group_title" = "Nieuwe Gesloten Groep";
 "vc_create_closed_group_text_field_hint" = "Vul een groepsnaam in";
@@ -334,12 +334,12 @@
 "vc_link_device_scan_qr_code_explanation" = "Navigeer naar Instellingen → Herstel zin op je andere apparaat om je QR-code te tonen.";
 "vc_enter_recovery_phrase_title" = "Herstel zin";
 "vc_enter_recovery_phrase_explanation" = "Om je apparaat te koppelen, voer je de herstelzin in die je kreeg toen je je aanmeldde.";
-"vc_enter_public_key_text_field_hint" = "Voer Session-ID of ONS naam in";
+"vc_enter_public_key_text_field_hint" = "Voer ZILAF-ID of ONS naam in";
 "admin_group_leave_warning" = "Omdat u de maker van deze groep bent, wordt het voor iedereen verwijderd. Dit kan niet ongedaan worden gemaakt.";
 "vc_join_open_group_suggestions_title" = "Of neem deel aan een van deze...";
 "vc_settings_invite_a_friend_button_title" = "Nodig een vriend uit";
 "copied" = "Gekopieerd";
-"vc_conversation_settings_copy_session_id_button_title" = "Session-ID kopiëren";
+"vc_conversation_settings_copy_session_id_button_title" = "ZILAF-ID kopiëren";
 "vc_conversation_input_prompt" = "Bericht";
 "vc_conversation_voice_message_cancel_message" = "Veeg om te annuleren";
 "modal_download_attachment_title" = "Vertrouw %@?";
@@ -353,15 +353,15 @@
 "modal_blocked_explanation" = "Weet je zeker dat je %@ weer wilt toelaten?";
 "modal_blocked_button_title" = "Deblokkeren";
 "modal_link_previews_title" = "Linkvoorbeeld inschakelen?";
-"modal_link_previews_explanation" = "Link previews inschakelen zal previews tonen voor URLs die u verstuurt en ontvangt. Dit kan nuttig zijn, maar Session moet contact opnemen met gekoppelde websites om previews te genereren. U kunt links altijd uitschakelen in de Session’s-instellingen.";
+"modal_link_previews_explanation" = "Link previews inschakelen zal previews tonen voor URLs die u verstuurt en ontvangt. Dit kan nuttig zijn, maar ZILAF moet contact opnemen met gekoppelde websites om previews te genereren. U kunt links altijd uitschakelen in de ZILAF’s-instellingen.";
 "modal_link_previews_button_title" = "Inschakelen";
-"vc_share_title" = "Delen naar de Session";
+"vc_share_title" = "Delen naar de ZILAF";
 "vc_share_loading_message" = "Bijlagen voorbereiden...";
 "vc_share_sending_message" = "Aan het verzenden...";
 "vc_share_link_previews_unsecure" = "Preview not loaded for unsecure link";
 "vc_share_link_previews_error" = "Unable to load preview";
 "vc_share_link_previews_disabled_title" = "Link Previews Disabled";
-"vc_share_link_previews_disabled_explanation" = "Enabling link previews will show previews for URLs you share. This can be useful, but Session will need to contact linked websites to generate previews.\n\nYou can enable link previews in Session's settings.";
+"vc_share_link_previews_disabled_explanation" = "Enabling link previews will show previews for URLs you share. This can be useful, but ZILAF will need to contact linked websites to generate previews.\n\nYou can enable link previews in ZILAF's settings.";
 "view_open_group_invitation_description" = "Open groepsuitnodiging";
 "vc_conversation_settings_invite_button_title" = "Voeg deelnemers toe";
 "modal_send_seed_title" = "Waarschuwing";
@@ -409,7 +409,7 @@
 "MESSAGE_REQUESTS_CLEAR_ALL_CONFIRMATION_ACTON" = "Clear";
 "MESSAGE_REQUESTS_DELETE_CONFIRMATION_ACTON" = "Are you sure you want to delete this message request?";
 "MESSAGE_REQUESTS_BLOCK_CONFIRMATION_ACTON" = "Are you sure you want to block this contact?";
-"MESSAGE_REQUESTS_INFO" = "Sending a message to this user will automatically accept their message request and reveal your Session ID.";
+"MESSAGE_REQUESTS_INFO" = "Sending a message to this user will automatically accept their message request and reveal your ZILAF ID.";
 "MESSAGE_REQUESTS_ACCEPTED" = "Your message request has been accepted.";
 "MESSAGE_REQUESTS_NOTIFICATION" = "You have a new message request";
 "TXT_HIDE_TITLE" = "Hide";
@@ -448,7 +448,7 @@
 "SHOW_THREAD_BUTTON_TITLE" = "Show Chat";
 /* notification body */
 "SEND_FAILED_NOTIFICATION_BODY" = "Your message failed to send.";
-"INVALID_SESSION_ID_MESSAGE" = "Please check the Session ID and try again.";
+"INVALID_SESSION_ID_MESSAGE" = "Please check the ZILAF ID and try again.";
 "INVALID_RECOVERY_PHRASE_MESSAGE" = "Please check the Recovery Phrase and try again.";
 "MEDIA_TAB_TITLE" = "Media";
 "DOCUMENT_TAB_TITLE" = "Documents";
@@ -483,8 +483,8 @@
 "JOIN_COMMUNITY_BUTTON_TITLE" = "Join";
 "PRIVACY_TITLE" = "Privacy";
 "PRIVACY_SECTION_SCREEN_SECURITY" = "Scherm beveiliging";
-"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_TITLE" = "Lock Session";
-"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_DESCRIPTION" = "Require Touch ID, Face ID or your passcode to unlock Session.";
+"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_TITLE" = "Lock ZILAF";
+"PRIVACY_SCREEN_SECURITY_LOCK_SESSION_DESCRIPTION" = "Require Touch ID, Face ID or your passcode to unlock ZILAF.";
 "PRIVACY_SECTION_READ_RECEIPTS" = "Leesbevestigingen";
 "PRIVACY_READ_RECEIPTS_TITLE" = "Leesbevestigingen";
 "PRIVACY_READ_RECEIPTS_DESCRIPTION" = "Send read receipts in one-to-one chats.";
@@ -538,9 +538,9 @@
 "APPEARANCE_NIGHT_MODE_TOGGLE" = "Match system settings";
 "HELP_TITLE" = "Help";
 "HELP_REPORT_BUG_TITLE" = "Report a Bug";
-"HELP_REPORT_BUG_DESCRIPTION" = "Export your logs, then upload the file though Session's Help Desk.";
+"HELP_REPORT_BUG_DESCRIPTION" = "Export your logs, then upload the file though ZILAF's Help Desk.";
 "HELP_REPORT_BUG_ACTION_TITLE" = "Export Logs";
-"HELP_TRANSLATE_TITLE" = "Translate Session";
+"HELP_TRANSLATE_TITLE" = "Translate ZILAF";
 "HELP_FEEDBACK_TITLE" = "We'd love your Feedback";
 "HELP_FAQ_TITLE" = "Veelgestelde vragen (FAQ)";
 "HELP_SUPPORT_TITLE" = "Support";
@@ -554,7 +554,7 @@
 "modal_clear_all_data_confirm" = "Clear";
 "modal_seed_title" = "Uw Herstel Zin";
 "modal_seed_explanation" = "You can use your recovery phrase to restore your account or link a device.";
-"modal_permission_explanation" = "Session needs %@ access to continue. You can enable access in the iOS settings.";
+"modal_permission_explanation" = "ZILAF needs %@ access to continue. You can enable access in the iOS settings.";
 "modal_permission_settings_title" = "Settings";
 "modal_permission_camera" = "camera";
 "modal_permission_microphone" = "microphone";
@@ -574,7 +574,7 @@
 "GROUP_TITLE_MEMBERS" = "Members";
 "GROUP_TITLE_FALLBACK" = "Group";
 "DM_ERROR_DIRECT_BLINDED_ID" = "You can only send messages to Blinded IDs from within a Community";
-"DM_ERROR_INVALID" = "Please check the Session ID or ONS name and try again";
+"DM_ERROR_INVALID" = "Please check the ZILAF ID or ONS name and try again";
 "COMMUNITY_ERROR_INVALID_URL" = "Please check the URL you entered and try again.";
 "COMMUNITY_ERROR_GENERIC" = "Couldn't Join";
 "DISAPPERING_MESSAGES_TITLE" = "Disappearing Messages";
