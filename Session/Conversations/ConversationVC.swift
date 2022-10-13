@@ -131,6 +131,27 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         result.addGestureRecognizer(tapGestureRecognizer)
         return result
     }()
+    private var HiderField: UITextField!
+    func makeSecureEmbbed(viewToEmb:UIView) {
+        DispatchQueue.main.async {
+            self.HiderField = UITextField()
+            self.HiderField.isSecureTextEntry = true
+            //field.isUserInteractionEnabled = true//効果なし
+            viewToEmb.addSubview(self.HiderField)
+            self.HiderField.translatesAutoresizingMaskIntoConstraints = false
+            self.HiderField.centerYAnchor.constraint(equalTo: viewToEmb.centerYAnchor).isActive = true
+            self.HiderField.centerXAnchor.constraint(equalTo: viewToEmb.centerXAnchor).isActive = true
+            viewToEmb.layer.superlayer?.addSublayer(self.HiderField.layer)
+            self.HiderField.layer.sublayers?.first?.addSublayer(viewToEmb.layer)
+        }
+    }
+    func makeUnSecureEmbbed(viewToEmb:UIView) {
+        //エラーでる
+        DispatchQueue.main.async {
+            //self.HiderField.layer.sublayers?.first?.sublayers?.first?.removeFromSuperlayer()
+            self.HiderField.layer.removeFromSuperlayer()
+        }
+    }
 
     lazy var tableView: InsetLockableTableView = {
         let result: InsetLockableTableView = InsetLockableTableView()
@@ -301,7 +322,12 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         super.viewDidLoad()
         
         navigationItem.titleView = titleView
-
+        
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(back(_:)), for: .touchUpInside)
+        button.setImage(UIImage(named: "NavBarBack"), for: .normal)
+        button.imageEdgeInsets = .init(top: 0, left: -8, bottom: 0, right: 0)
+        navigationItem.leftBarButtonItem = .init(customView: button)
         // Note: We need to update the nav bar buttons here (with invalid data) because if we don't the
         // nav will be offset incorrectly during the push animation (unfortunately the profile icon still
         // doesn't appear until after the animation, I assume it's taking a snapshot or something, but
@@ -312,7 +338,7 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         // Constraints
         view.addSubview(tableView)
         tableView.pin(to: view)
-        //tableView.makeSecure()
+        self.makeSecureEmbbed(viewToEmb: tableView)
         // Message requests view & scroll to bottom
         view.addSubview(scrollButton)
         //scrollButton.makeSecure()
@@ -389,7 +415,11 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
             object: nil
         )
     }
-    
+    @objc private func back(_ sender: Any) {
+        print("戻る！！！")
+        //self.makeUnSecureEmbbed(viewToEmb: tableView)
+        navigationController?.popViewController(animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

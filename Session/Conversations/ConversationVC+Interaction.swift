@@ -19,7 +19,8 @@ extension ConversationVC:
     SendMediaNavDelegate,
     UIDocumentPickerDelegate,
     AttachmentApprovalViewControllerDelegate,
-    GifPickerViewControllerDelegate
+    GifPickerViewControllerDelegate,
+    UINavigationControllerDelegate
 {
     @objc func handleTitleViewTapped() {
         // Don't take the user to settings for unapproved threads
