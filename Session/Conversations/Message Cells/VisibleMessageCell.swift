@@ -258,6 +258,18 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
     }
 
     // MARK: - Updating
+    @objc func captureStatusDidChange()
+    {
+        print("capture処理通ってますか")
+        if UIScreen.main.isCaptured{//録画中なら画面を赤くする
+            self.bodyTappableLabel?.backgroundColor = UIColor.black
+            self.bodyTappableLabel?.textColor = UIColor.black
+        }
+        else{
+            self.bodyTappableLabel?.backgroundColor = UIColor.green
+            self.bodyTappableLabel?.textColor = UIColor.white
+        }
+    }
     
     override func update(
         with cellViewModel: MessageViewModel,
@@ -626,7 +638,9 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
                 stackView.pin(to: bubbleView)
                 snContentView.addArrangedSubview(bubbleBackgroundView)
         }
-
+        //if self.bodyTappableLabel != nil{
+        //    self.makeSecure()
+        //}
     }
     
     private func populateReaction(
@@ -1179,7 +1193,19 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
                 result.set(.height, to: size.height)
             }
         }
-        
+        if #available(iOS 11.0, *)
+        {
+            if UIScreen.main.isCaptured{//録画中なら画面を白くする
+                result.backgroundColor = UIColor.white
+                result.textColor = UIColor.white
+            }
+            print("キャプチャ処理通ってますか1")
+            //Observerに登録
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(self.captureStatusDidChange),
+                                                   name: UIScreen.capturedDidChangeNotification,
+                                                   object: nil)
+        }
         return result
     }
 }

@@ -2449,4 +2449,47 @@ extension ConversationVC: MediaPresentationContextProvider {
     func snapshotOverlayView(in coordinateSpace: UICoordinateSpace) -> (UIView, CGRect)? {
         return self.navigationController?.navigationBar.generateSnapshot(in: coordinateSpace)
     }
+    
+    func performIfNoMessageAddIt(){
+        //guard self.viewModel.threadData.threadVariant == .contact else { return }
+        //メッセージが0件の時にメッセージを送ろうとする処理
+        let threadId: String = self.viewModel.threadData.threadId
+        print(threadId)
+        let message = VisibleMessage(
+            text: "エラー回避のため、メッセージを送信します"
+        )
+        print(message)
+
+        Storage.shared.writeAsync { db in
+            guard let thread: SessionThread = try SessionThread.fetchOne(db, id: threadId) else { return }
+            print(thread)
+            do{
+                let config: DisappearingMessagesConfiguration = try DisappearingMessagesConfiguration
+                    .fetchOne(db, id: threadId)
+                    .defaulting(to: DisappearingMessagesConfiguration.defaultWith(threadId))
+                    .with(
+                        isEnabled: true,
+                        durationSeconds: (60*60)
+                    )
+                    .saved(db)
+                let interaction = try Interaction(
+                    threadId: threadId,
+                    authorId: getUserHexEncodedPublicKey(db),
+                    variant: .infoDisappearingMessagesUpdate,
+                    body: config.messageInfoString(with: nil),
+                    timestampMs: Int64(floor(Date().timeIntervalSince1970 * 1000)))
+                try MessageSender.send(
+                    db,
+                    message: message,
+                    interactionId: interaction.id,
+                    in: thread
+                )
+                
+            }catch{
+                print(error)
+            }
+            print("0件回避end")
+        }
+    }
+    
 }

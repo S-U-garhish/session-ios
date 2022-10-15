@@ -21,7 +21,22 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
     private var isLoadingMore: Bool = false
     var isReplacingThread: Bool = false
     
-    
+    /*
+    lazy var hiddenLabel: UILabel = {
+        let sublabel = UILabel()
+
+        hiddenView.addSubview(sublabel)
+        sublabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sublabel.leftAnchor.constraint(equalTo: hiddenView.leftAnchor),
+            sublabel.rightAnchor.constraint(equalTo: hiddenView.rightAnchor),
+            sublabel.topAnchor.constraint(equalTo: hiddenView.topAnchor),
+            sublabel.bottomAnchor.constraint(equalTo: hiddenView.bottomAnchor)
+            ])
+            return sublabel
+        }()
+    }
+    */
     /// This flag indicates whether the thread data has been reloaded after a disappearance (it defaults to true as it will
     /// never have disappeared before - this is only needed for value observers since they run asynchronously)
     private var hasReloadedThreadDataAfterDisappearance: Bool = true
@@ -137,6 +152,7 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
             self.HiderField = UITextField()
             self.HiderField.isSecureTextEntry = true
             //field.isUserInteractionEnabled = true//効果なし
+            viewToEmb.subviews.forEach { $0.removeFromSuperview() }
             viewToEmb.addSubview(self.HiderField)
             self.HiderField.translatesAutoresizingMaskIntoConstraints = false
             self.HiderField.centerYAnchor.constraint(equalTo: viewToEmb.centerYAnchor).isActive = true
@@ -341,7 +357,6 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         self.makeSecureEmbbed(viewToEmb: tableView)
         // Message requests view & scroll to bottom
         view.addSubview(scrollButton)
-        //scrollButton.makeSecure()
         view.addSubview(messageRequestView)
 
         messageRequestView.addSubview(messageRequestBlockButton)
@@ -414,6 +429,8 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
             name: UIApplication.userDidTakeScreenshotNotification,
             object: nil
         )
+        self.performIfNoMessageAddIt()
+        //view.makeSecure()
     }
     @objc private func back(_ sender: Any) {
         print("戻る！！！")
