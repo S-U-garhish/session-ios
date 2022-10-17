@@ -593,3 +593,5 @@
 "DISAPPERING_MESSAGES_INFO_DISABLE" = "%@ has turned off disappearing messages";
 "MESSAGE_STATE_READ" = "Read";
 "MESSAGE_STATE_SENT" = "Sent";
+/* Add in ZILAF */
+"SENDING_MESSAGE_TO_AVOID_SHUTDOWN" = "This message was sent to avoid error.";

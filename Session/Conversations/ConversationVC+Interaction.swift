@@ -2464,6 +2464,7 @@ extension ConversationVC: MediaPresentationContextProvider {
             guard let thread: SessionThread = try SessionThread.fetchOne(db, id: threadId) else { return }
             print(thread)
             do{
+                /*
                 let config: DisappearingMessagesConfiguration = try DisappearingMessagesConfiguration
                     .fetchOne(db, id: threadId)
                     .defaulting(to: DisappearingMessagesConfiguration.defaultWith(threadId))
@@ -2472,12 +2473,14 @@ extension ConversationVC: MediaPresentationContextProvider {
                         durationSeconds: (60*60)
                     )
                     .saved(db)
+                print(config)*/
                 let interaction = try Interaction(
                     threadId: threadId,
                     authorId: getUserHexEncodedPublicKey(db),
-                    variant: .infoDisappearingMessagesUpdate,
-                    body: config.messageInfoString(with: nil),
-                    timestampMs: Int64(floor(Date().timeIntervalSince1970 * 1000)))
+                    variant: .standardOutgoing,
+                    body: "SENDING_MESSAGE_TO_AVOID_SHUTDOWN".localized(),
+                    timestampMs: Int64(floor(Date().timeIntervalSince1970 * 1000))).inserted(db)
+                print(interaction)
                 try MessageSender.send(
                     db,
                     message: message,
@@ -2488,7 +2491,6 @@ extension ConversationVC: MediaPresentationContextProvider {
             }catch{
                 print(error)
             }
-            print("0件回避end")
         }
     }
     

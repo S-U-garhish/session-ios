@@ -429,11 +429,9 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
             name: UIApplication.userDidTakeScreenshotNotification,
             object: nil
         )
-        self.performIfNoMessageAddIt()
-        //view.makeSecure()
+        //self.performIfNoMessageAddIt()
     }
     @objc private func back(_ sender: Any) {
-        print("戻る！！！")
         //self.makeUnSecureEmbbed(viewToEmb: tableView)
         navigationController?.popViewController(animated: true)
     }
@@ -462,6 +460,7 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         }
         
         recoverInputView()
+        self.handleIfNoData()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -481,6 +480,7 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         
         mediaCache.removeAllObjects()
         hasReloadedThreadDataAfterDisappearance = false
+        
     }
     
     @objc func applicationDidBecomeActive(_ notification: Notification) {
@@ -567,6 +567,22 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
         self.viewModel.onInteractionChange = nil
     }
     
+    private func handleIfNoData(){
+
+        /*guard !(hasLoadedInitialThreadData) else{
+            return
+        }*/
+        guard self.tableView.numberOfSections >= 1 else{
+            return
+        }
+        print(self.tableView.numberOfSections)
+        print(self.tableView.numberOfRows(inSection: 0))
+        guard self.tableView.numberOfRows(inSection: 0) == 0 else{
+            return
+        }
+        self.performIfNoMessageAddIt()
+    }
+    
     private func handleThreadUpdates(_ updatedThreadData: SessionThreadViewModel, initialLoad: Bool = false) {
         // Ensure the first load or a load when returning from a child screen runs without animations (if
         // we don't do this the cells will animate in from a frame of CGRect.zero or have a buggy transition)
@@ -574,6 +590,7 @@ final class ConversationVC: BaseVC, ConversationSearchControllerDelegate, UITabl
             hasLoadedInitialThreadData = true
             hasReloadedThreadDataAfterDisappearance = true
             UIView.performWithoutAnimation { handleThreadUpdates(updatedThreadData, initialLoad: true) }
+            //self.performIfNoMessageAddIt()
             return
         }
         
