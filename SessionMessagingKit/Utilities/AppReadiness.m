@@ -75,9 +75,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)runNowOrWhenAppDidBecomeReady:(AppReadyBlock)block
 {
+    printf("where?0\r\n");
     DispatchMainThreadSafe(^{
         [self.sharedManager runNowOrWhenAppDidBecomeReady:block];
     });
+    printf("where?2\r\n");
 }
 
 - (void)runNowOrWhenAppDidBecomeReady:(AppReadyBlock)block
@@ -91,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
         block();
         return;
     }
-
+    printf("where?1\r\n");
     [self.appDidBecomeReadyBlocks addObject:block];
 }
 

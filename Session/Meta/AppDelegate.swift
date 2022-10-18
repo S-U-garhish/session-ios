@@ -33,16 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         Cryptography.seedRandom()
         AppVersion.sharedInstance()
-
         // Prevent the device from sleeping during database view async registration
         // (e.g. long database upgrades).
         //
         // This block will be cleared in storageIsReady.
         DeviceSleepManager.sharedInstance.addBlock(blockObject: self)
-        
         let mainWindow: UIWindow = TraitObservingWindow(frame: UIScreen.main.bounds)
         self.loadingViewController = LoadingViewController()
-        
         // Store a weak reference in the ThemeManager so it can properly apply themes as needed
         ThemeManager.mainWindow = mainWindow
         
@@ -50,54 +47,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             appSpecificBlock: {
                 // Create AppEnvironment
                 AppEnvironment.shared.setup()
-                
                 // Note: Intentionally dispatching sync as we want to wait for these to complete before
                 // continuing
                 DispatchQueue.main.sync {
+
                     ScreenLockUI.shared.setupWithRootWindow(rootWindow: mainWindow)
                     OWSWindowManager.shared().setup(
                         withRootWindow: mainWindow,
                         screenBlockingWindow: ScreenLockUI.shared.screenBlockingWindow
                     )
                     ScreenLockUI.shared.startObserving()
+                    print("どこで止まってる7.5")
                 }
             },
             migrationProgressChanged: { [weak self] progress, minEstimatedTotalTime in
+                print("どこで止まってる7.55")
                 self?.loadingViewController?.updateProgress(
                     progress: progress,
                     minEstimatedTotalTime: minEstimatedTotalTime
                 )
+                print("どこで止まってる7.6")
             },
             migrationsCompletion: { [weak self] error, needsConfigSync in
                 guard error == nil else {
+                    print("FailedMigrationAlertF")
                     self?.showFailedMigrationAlert(error: error)
                     return
                 }
-                
+                print("どこで止まってる8")
                 self?.completePostMigrationSetup(needsConfigSync: needsConfigSync)
             }
         )
-        
         if Environment.shared?.callManager.wrappedValue?.currentCall == nil {
             UserDefaults.sharedLokiProject?.set(false, forKey: "isCallOngoing")
         }
         
         // No point continuing if we are running tests
         guard !CurrentAppContext().isRunningTests else { return true }
-
         self.window = mainWindow
         CurrentAppContext().mainWindow = mainWindow
         
         // Show LoadingViewController until the async database view registrations are complete.
         mainWindow.rootViewController = self.loadingViewController
         mainWindow.makeKeyAndVisible()
-
         // This must happen in appDidFinishLaunching or earlier to ensure we don't
         // miss notifications.
         // Setting the delegate also seems to prevent us from getting the legacy notification
         // notification callbacks upon launch e.g. 'didReceiveLocalNotification'
         UNUserNotificationCenter.current().delegate = self
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(registrationStateDidChange),
@@ -110,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             name: .missedCall,
             object: nil
         )
-        
+        print("どこで止まってる12")
         Logger.info("application: didFinishLaunchingWithOptions completed.")
 
         return true
@@ -156,14 +153,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         guard !CurrentAppContext().isRunningTests else { return }
-        
+        print("where9")
         UserDefaults.sharedLokiProject?[.isMainAppActive] = true
         
         ensureRootViewController()
-
         AppReadiness.runNowOrWhenAppDidBecomeReady { [weak self] in
+            print("where10")
             self?.handleActivation()
-            
+            print("where11")
             /// Clear all notifications whenever we become active once the app is ready
             ///
             /// **Note:** It looks like when opening the app from a notification, `userNotificationCenter(didReceive)` is
@@ -174,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 self?.clearAllNotificationsAndRestoreBadgeCount()
             }
         }
-
+        print("where12")
         // On every activation, clear old temp directories.
         ClearOldTemporaryDirectories()
     }
@@ -244,9 +241,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - App Readiness
     
     private func completePostMigrationSetup(needsConfigSync: Bool) {
+        print("どこで止まってる13")
         Configuration.performMainSetup()
         JobRunner.add(executor: SyncPushTokensJob.self, for: .syncPushTokens)
-        
+        print("どこで止まってる14")
         /// Setup the UI
         ///
         /// **Note:** This **MUST** be run before calling:
@@ -259,7 +257,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ///    which get fetched to display on the home screen, if the PagedDatabaseObserver hasn't
         ///    been setup yet then the home screen can show stale (ie. deleted) interactions incorrectly
         self.ensureRootViewController(isPreAppReadyCall: true)
-        
+        print("どこで止まってる15")
         // Trigger any launch-specific jobs and start the JobRunner
         JobRunner.appDidFinishLaunching()
         
@@ -323,10 +321,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 },
                 migrationsCompletion: { [weak self] error, needsConfigSync in
                     guard error == nil else {
+                        print("FailedMigrationAlert")
                         self?.showFailedMigrationAlert(error: error)
                         return
                     }
-                    
                     self?.completePostMigrationSetup(needsConfigSync: needsConfigSync)
                 }
             )
@@ -342,10 +340,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     /// The user must unlock the device once after reboot before the database encryption key can be accessed.
     private func verifyDBKeysAvailableBeforeBackgroundLaunch() {
+        print("verifyDBKeysAvailableBeforeBackgroundLaunch呼び出され")
         guard UIApplication.shared.applicationState == .background else { return }
-        
         guard !Storage.isDatabasePasswordAccessible else { return }    // All good
-        
         Logger.info("Exiting because we are in the background and the database password is not accessible.")
         
         let notificationContent: UNMutableNotificationContent = UNMutableNotificationContent()
@@ -366,7 +363,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: nil)
         UIApplication.shared.applicationIconBadgeNumber = 1
-        
         DDLog.flushLog()
         exit(0)
     }
@@ -378,13 +374,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     private func handleActivation() {
+        print("どこで止まってる15")
         guard Identity.userExists() else { return }
-        
+        print("どこで止まってる16")
         enableBackgroundRefreshIfNecessary()
         JobRunner.appDidBecomeActive()
-        
         startPollersIfNeeded()
-        
         if CurrentAppContext().isMainApp {
             syncConfigurationIfNeeded()
             handleAppActivatedWithOngoingCallIfNeeded()

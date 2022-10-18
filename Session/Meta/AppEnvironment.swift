@@ -38,6 +38,7 @@ public class AppEnvironment {
         self.pushRegistrationManager = PushRegistrationManager()
         self._userNotificationActionHandler = UserNotificationActionHandler()
         self.fileLogger = DDFileLogger()
+        print("where6")
         
         SwiftSingletons.register(self)
     }
