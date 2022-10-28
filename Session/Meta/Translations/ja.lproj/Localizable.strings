@@ -301,7 +301,7 @@
 "vc_scan_qr_code_camera_access_explanation" = "ZILAF で QR コードをスキャンするにはカメラへのアクセスが必要です";
 "vc_scan_qr_code_grant_camera_access_button_title" = "カメラへのアクセスを許可する";
 "vc_create_closed_group_title" = "新しいクローズドグループ";
-"vc_create_closed_group_text_field_hint" = "グループ名を入力してください";
+"vc_create_closed_group_text_field_hint" = "ここにグループ名を入力してください";
 "vc_create_closed_group_empty_state_message" = "まだ連絡先がありません";
 "vc_create_closed_group_empty_state_button_title" = "ZILAF を開始する";
 "vc_create_closed_group_group_name_missing_error" = "グループ名を入力してください";

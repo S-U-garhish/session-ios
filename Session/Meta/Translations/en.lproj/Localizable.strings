@@ -301,7 +301,7 @@
 "vc_scan_qr_code_camera_access_explanation" = "ZILAF needs camera access to scan QR codes";
 "vc_scan_qr_code_grant_camera_access_button_title" = "Grant Camera Access";
 "vc_create_closed_group_title" = "Create Group";
-"vc_create_closed_group_text_field_hint" = "Enter a group name";
+"vc_create_closed_group_text_field_hint" = "Enter a group name here";
 "vc_create_closed_group_empty_state_message" = "You don't have any contacts yet";
 "vc_create_closed_group_empty_state_button_title" = "Start a ZILAF";
 "vc_create_closed_group_group_name_missing_error" = "Please enter a group name";
