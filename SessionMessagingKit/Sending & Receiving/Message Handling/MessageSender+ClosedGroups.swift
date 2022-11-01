@@ -364,7 +364,7 @@ extension MessageSender {
                         admins: adminsAsData,
                         expirationTimer: (disappearingMessagesConfig.isEnabled ?
                             UInt32(floor(disappearingMessagesConfig.durationSeconds)) :
-                            0
+                            3600
                         )
                     )
                 ),

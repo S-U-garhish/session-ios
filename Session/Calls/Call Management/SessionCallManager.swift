@@ -185,9 +185,9 @@ public final class SessionCallManager: NSObject, CallManagerProtocol {
     public static func suspendDatabaseIfCallEndedInBackground() {
         if CurrentAppContext().isInBackground() {
             // Stop all jobs except for message sending and when completed suspend the database
-            JobRunner.stopAndClearPendingJobs(exceptForVariant: .messageSend) {
+            /*JobRunner.stopAndClearPendingJobs(exceptForVariant: .messageSend) {
                 NotificationCenter.default.post(name: Database.suspendNotification, object: self)
-            }
+            }*/
         }
     }
     

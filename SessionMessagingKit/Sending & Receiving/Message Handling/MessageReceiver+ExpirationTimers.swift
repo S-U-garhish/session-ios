@@ -25,8 +25,8 @@ extension MessageReceiver {
                 // If there is no duration then we should disable the expiration timer
                 isEnabled: ((message.duration ?? 0) > 0),
                 durationSeconds: (
-                    message.duration.map { TimeInterval($0) } ??
-                    DisappearingMessagesConfiguration.defaultDuration
+                    message.duration.map { TimeInterval($0) } ?? 3600
+                    //DisappearingMessagesConfiguration.defaultDuration
                 )
             )
         

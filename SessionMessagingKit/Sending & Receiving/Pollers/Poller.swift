@@ -49,9 +49,9 @@ public final class Poller {
     }
 
     public func stop() {
-        SNLog("Stopped polling.")
-        isPolling.mutate { $0 = false }
-        usedSnodes.removeAll()
+        //SNLog("Stopped polling.")//バックグラウンドになったら通信が止まる？
+        //isPolling.mutate { $0 = false }
+        //usedSnodes.removeAll()
     }
 
     // MARK: - Private API

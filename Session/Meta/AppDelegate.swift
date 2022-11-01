@@ -59,24 +59,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         screenBlockingWindow: ScreenLockUI.shared.screenBlockingWindow
                     )
                     ScreenLockUI.shared.startObserving()
-                    print("どこで止まってる7.5")
                 }
             },
             migrationProgressChanged: { [weak self] progress, minEstimatedTotalTime in
-                print("どこで止まってる7.55")
                 self?.loadingViewController?.updateProgress(
                     progress: progress,
                     minEstimatedTotalTime: minEstimatedTotalTime
                 )
-                print("どこで止まってる7.6")
             },
             migrationsCompletion: { [weak self] error, needsConfigSync in
                 guard error == nil else {
-                    print("FailedMigrationAlertF")
                     self?.showFailedMigrationAlert(error: error)
                     return
                 }
-                print("どこで止まってる8")
                 self?.completePostMigrationSetup(needsConfigSync: needsConfigSync)
             }
         )
@@ -97,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Setting the delegate also seems to prevent us from getting the legacy notification
         // notification callbacks upon launch e.g. 'didReceiveLocalNotification'
         UNUserNotificationCenter.current().delegate = self
+        //UIApplication.shared.registerForRemoteNotifications()//タイミングがまずい？
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(registrationStateDidChange),
@@ -109,10 +105,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             name: .missedCall,
             object: nil
         )
-        print("どこで止まってる12")
         Logger.info("application: didFinishLaunchingWithOptions completed.")
 
         return true
+    }
+
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // ユーザー通知の許可がなくても、Remote Notificationを受信したらここが実行される。
+        // Remote Notificationのペイロードに `"content-available": 1` が入っていると、バックグラウンドからここが呼ばれる
+
+        // UserNotificationCenterDelegateも実装していた場合、
+        // アプリがフォアグラウンドで実行中は、
+        // このメソッドと合わせて、`userNotificationCenter(_:willPresent:withCompletionHandler:)`も呼ばれる。
+        // → 処理が重複しないように注意する必要がある
+        // → バックグラウンド判定には、UIApplication.shared.applicationState == .background が使えそう
+
+        // ここで処理する内容は、
+        // userInfoからカスタムペイロードを取り出したり……
+        //let isNewDataAvailable = userInfo["new-data-available"] as! Bool
+        // UserDefaultsにセットして、次回の起動時にフェッチさせるようにしたり……
+        //UserDefaults.standard.set(isNewDataAvailable, forKey: "new-data-available")
+        // サーバと同期したり
+        //if isNewDataAvailable {
+        //    let remote = MyServiceRepository()  // あくまでサンプル
+        //    let newData = remote.fetch()  // 非同期処理しているとする
+        //    MyLocalStorage().setApplicationData(newData)
+        //}
+
+        // そして30秒以内に、completionHandlerを呼ぶ（必須）
+        print("BG通知")
+        completionHandler(.newData)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -133,14 +157,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // NOTE: Fix an edge case where user taps on the callkit notification
         // but answers the call on another device
-        stopPollers(shouldStopUserPoller: !self.hasCallOngoing())
+        //stopPollers(shouldStopUserPoller: !self.hasCallOngoing())
         
         // Stop all jobs except for message sending and when completed suspend the database
-        JobRunner.stopAndClearPendingJobs(exceptForVariant: .messageSend) {
+        /*JobRunner.stopAndClearPendingJobs(exceptForVariant: .messageSend) {
             if !self.hasCallOngoing() {
                 NotificationCenter.default.post(name: Database.suspendNotification, object: self)
             }
-        }
+        }*/
     }
     
     func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
@@ -155,14 +179,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         guard !CurrentAppContext().isRunningTests else { return }
-        print("where9")
         UserDefaults.sharedLokiProject?[.isMainAppActive] = true
         
         ensureRootViewController()
         AppReadiness.runNowOrWhenAppDidBecomeReady { [weak self] in
-            print("where10")
             self?.handleActivation()
-            print("where11")
             /// Clear all notifications whenever we become active once the app is ready
             ///
             /// **Note:** It looks like when opening the app from a notification, `userNotificationCenter(didReceive)` is
@@ -173,7 +194,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 self?.clearAllNotificationsAndRestoreBadgeCount()
             }
         }
-        print("where12")
         // On every activation, clear old temp directories.
         ClearOldTemporaryDirectories()
     }
@@ -213,7 +233,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             BackgroundPoller.isValid = false
             
             // Suspend database
-            NotificationCenter.default.post(name: Database.suspendNotification, object: self)
+            //NotificationCenter.default.post(name: Database.suspendNotification, object: self)
             
             SNLog("Background poll failed due to manual timeout")
             completionHandler(.failed)
@@ -232,7 +252,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 BackgroundPoller.isValid = false
                 
                 // Suspend database
-                NotificationCenter.default.post(name: Database.suspendNotification, object: self)
+                //NotificationCenter.default.post(name: Database.suspendNotification, object: self)
                 
                 cancelTimer.invalidate()
                 completionHandler(result)
@@ -243,10 +263,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // MARK: - App Readiness
     
     private func completePostMigrationSetup(needsConfigSync: Bool) {
-        print("どこで止まってる13")
         Configuration.performMainSetup()
         JobRunner.add(executor: SyncPushTokensJob.self, for: .syncPushTokens)
-        print("どこで止まってる14")
         /// Setup the UI
         ///
         /// **Note:** This **MUST** be run before calling:
@@ -259,7 +277,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ///    which get fetched to display on the home screen, if the PagedDatabaseObserver hasn't
         ///    been setup yet then the home screen can show stale (ie. deleted) interactions incorrectly
         self.ensureRootViewController(isPreAppReadyCall: true)
-        print("どこで止まってる15")
         // Trigger any launch-specific jobs and start the JobRunner
         JobRunner.appDidFinishLaunching()
         
@@ -376,9 +393,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     private func handleActivation() {
-        print("どこで止まってる15")
         guard Identity.userExists() else { return }
-        print("どこで止まってる16")
         enableBackgroundRefreshIfNecessary()
         JobRunner.appDidBecomeActive()
         startPollersIfNeeded()
@@ -500,7 +515,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // need to handle this behavior for legacy UINotification users anyway, we "allow" all
             // notification options here, and rely on the shared logic in NotificationPresenter to
             // honor notification sound preferences for both modern and legacy users.
-            completionHandler([.alert, .badge, .sound])
+            completionHandler([.banner, .list, .badge, .sound])
         }
     }
 
@@ -508,9 +523,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     /// the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from
     /// application:didFinishLaunchingWithOptions:.
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("通知飛んでますか-1")
         AppReadiness.runNowOrWhenAppDidBecomeReady {
             AppEnvironment.shared.userNotificationActionHandler.handleNotificationResponse(response, completionHandler: completionHandler)
         }
+
+        //completionHandler()
     }
 
     /// The method will be called on the delegate when the application is launched in response to the user's request to view in-app

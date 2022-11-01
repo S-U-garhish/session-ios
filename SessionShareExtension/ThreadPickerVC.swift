@@ -234,13 +234,13 @@ final class ThreadPickerVC: UIViewController, UITableViewDataSource, UITableView
                 }
                 .done { [weak self] _ in
                     // Suspend the database
-                    NotificationCenter.default.post(name: Database.suspendNotification, object: self)
+                    //NotificationCenter.default.post(name: Database.suspendNotification, object: self)
                     activityIndicator.dismiss { }
                     self?.shareVC?.shareViewWasCompleted()
                 }
                 .catch { [weak self] error in
                     // Suspend the database
-                    NotificationCenter.default.post(name: Database.suspendNotification, object: self)
+                    //NotificationCenter.default.post(name: Database.suspendNotification, object: self)
                     activityIndicator.dismiss { }
                     self?.shareVC?.shareViewFailed(error: error)
                 }

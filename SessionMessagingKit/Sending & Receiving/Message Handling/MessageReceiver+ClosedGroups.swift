@@ -122,10 +122,10 @@ extension MessageReceiver {
             .fetchOne(db)
             .defaulting(to: DisappearingMessagesConfiguration.defaultWith(thread.id))
             .with(
-                isEnabled: (expirationTimer > 0),
+                isEnabled: true,
                 durationSeconds: TimeInterval(expirationTimer > 0 ?
-                    expirationTimer :
-                    (24 * 60 * 60)
+                    3600 :
+                    (1 * 60 * 60)
                 )
             )
             .save(db)

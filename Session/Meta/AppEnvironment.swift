@@ -58,5 +58,6 @@ public class AppEnvironment {
         fileLogger.rollingFrequency = kDayInterval // Refresh everyday
         fileLogger.logFileManager.maximumNumberOfLogFiles = 3 // Save 3 days' log files
         DDLog.add(fileLogger)
+        //DDLog.add(DDTTYLogger.sharedInstance!)
     }
 }

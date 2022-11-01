@@ -1205,7 +1205,6 @@ final class VisibleMessageCell: MessageCell, TappableLabelDelegate {
                 result.backgroundColor = UIColor.white
                 result.textColor = UIColor.white
             }
-            print("キャプチャ処理通ってますか1")
             //Observerに登録
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(self.captureStatusDidChange),

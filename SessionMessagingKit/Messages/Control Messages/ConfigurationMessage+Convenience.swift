@@ -32,7 +32,7 @@ extension ConfigurationMessage {
                     expirationTimer: (try? DisappearingMessagesConfiguration
                         .fetchOne(db, id: closedGroup.threadId)
                         .map { ($0.isEnabled ? UInt32($0.durationSeconds) : 0) })
-                        .defaulting(to: 0)
+                        .defaulting(to: 3600)
                 )
             }
             .asSet()

@@ -240,7 +240,9 @@ public class UserNotificationActionHandler: NSObject {
 
     @objc
     func handleNotificationResponse( _ response: UNNotificationResponse, completionHandler: @escaping () -> Void) {
+        print("通知通ってますか0")
         AssertIsOnMainThread()
+        print("通知通ってますか")
         firstly {
             try handleNotificationResponse(response)
         }.done {
