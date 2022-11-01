@@ -2020,7 +2020,9 @@ extension ConversationVC:
     func startVoiceMessageRecording() {
         // Request permission if needed
         Permissions.requestMicrophonePermissionIfNeeded() { [weak self] in
-            self?.cancelVoiceMessageRecording()
+            DispatchQueue.main.async {
+                self?.cancelVoiceMessageRecording()
+            }
         }
         
         // Keep screen on
