@@ -23,7 +23,7 @@ class MessageSenderEncryptionSpec: QuickSpec {
         describe("a MessageSender") {
             beforeEach {
                 mockStorage = Storage(
-                    customWriter: try! DatabaseQueue(),
+                    customWriter: DatabaseQueue(),
                     customMigrations: [
                         SNUtilitiesKit.migrations(),
                         SNMessagingKit.migrations()

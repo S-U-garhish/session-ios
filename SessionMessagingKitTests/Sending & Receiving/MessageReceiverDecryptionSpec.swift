@@ -26,7 +26,7 @@ class MessageReceiverDecryptionSpec: QuickSpec {
         describe("a MessageReceiver") {
             beforeEach {
                 mockStorage = Storage(
-                    customWriter: try! DatabaseQueue(),
+                    customWriter: DatabaseQueue(),
                     customMigrations: [
                         SNUtilitiesKit.migrations(),
                         SNMessagingKit.migrations()

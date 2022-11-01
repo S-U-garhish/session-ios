@@ -316,22 +316,21 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
     
     // MARK: - Custom Database Interaction
     
-    public mutating func willInsert(_ db: Database) throws {
+    public mutating func insert(_ db: Database) throws {
         // Automatically mark interactions which can't be unread as read so the unread count
         // isn't impacted
         self.wasRead = (self.wasRead || !self.variant.canBeUnread)
-    }
-    
-    public func aroundInsert(_ db: Database, insert: () throws -> InsertionSuccess) throws {
-        let success: InsertionSuccess = try insert()
         
-        guard
-            let threadVariant: SessionThread.Variant = try? SessionThread
-                .filter(id: threadId)
-                .select(.variant)
-                .asRequest(of: SessionThread.Variant.self)
-                .fetchOne(db)
-        else {
+        try performInsert(db)
+        
+        // Since we need to do additional logic upon insert we can just set the 'id' value
+        // here directly instead of in the 'didInsert' method (if you look at the docs the
+        // 'db.lastInsertedRowID' value is the row id of the newly inserted row which the
+        // interaction uses as it's id)
+        let interactionId: Int64 = db.lastInsertedRowID
+        self.id = interactionId
+        
+        guard let thread: SessionThread = try? SessionThread.fetchOne(db, id: threadId) else {
             SNLog("Inserted an interaction but couldn't find it's associated thead")
             return
         }
@@ -340,10 +339,10 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
             case .standardOutgoing:
                 // New outgoing messages should immediately determine their recipient list
                 // from current thread state
-                switch threadVariant {
+                switch thread.variant {
                     case .contact:
                         try RecipientState(
-                            interactionId: success.rowID,
+                            interactionId: interactionId,
                             recipientId: threadId,  // Will be the contact id
                             state: .sending
                         ).insert(db)
@@ -351,7 +350,7 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
                     case .closedGroup:
                         let closedGroupMemberIds: Set<String> = (try? GroupMember
                             .select(.profileId)
-                            .filter(GroupMember.Columns.groupId == threadId)
+                            .filter(GroupMember.Columns.groupId == thread.id)
                             .asRequest(of: String.self)
                             .fetchSet(db))
                             .defaulting(to: [])
@@ -368,7 +367,7 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
                             .filter { memberId -> Bool in memberId != userPublicKey }
                             .forEach { memberId in
                                 try RecipientState(
-                                    interactionId: success.rowID,
+                                    interactionId: interactionId,
                                     recipientId: memberId,
                                     state: .sending
                                 ).insert(db)
@@ -379,7 +378,7 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
                         // we need to ensure we have a state for all threads; so for open groups
                         // we just use the open group id as the 'recipientId' value
                         try RecipientState(
-                            interactionId: success.rowID,
+                            interactionId: interactionId,
                             recipientId: threadId,  // Will be the open group id
                             state: .sending
                         ).insert(db)
@@ -387,10 +386,6 @@ public struct Interaction: Codable, Identifiable, Equatable, FetchableRecord, Mu
                 
             default: break
         }
-    }
-    
-    public mutating func didInsert(_ inserted: InsertionSuccess) {
-        self.id = inserted.rowID
     }
 }
 

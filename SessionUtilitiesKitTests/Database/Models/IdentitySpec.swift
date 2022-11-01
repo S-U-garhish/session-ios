@@ -17,7 +17,7 @@ class IdentitySpec: QuickSpec {
         describe("an Identity") {
             beforeEach {
                 mockStorage = Storage(
-                    customWriter: try! DatabaseQueue(),
+                    customWriter: DatabaseQueue(),
                     customMigrations: [
                         SNUtilitiesKit.migrations()
                     ]

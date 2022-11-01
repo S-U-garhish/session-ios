@@ -61,7 +61,7 @@ class ConversationSettingsViewModel: SessionTableViewModel<NoNav, ConversationSe
                                 .settingBool(key: .trimOpenGroupMessagesOlderThanSixMonths)
                             ),
                             onTap: {
-                                Storage.shared.write { db in
+                                Storage.shared.writeAsync { db in
                                     db[.trimOpenGroupMessagesOlderThanSixMonths] = !db[.trimOpenGroupMessagesOlderThanSixMonths]
                                 }
                             }
@@ -79,7 +79,7 @@ class ConversationSettingsViewModel: SessionTableViewModel<NoNav, ConversationSe
                                 .settingBool(key: .shouldAutoPlayConsecutiveAudioMessages)
                             ),
                             onTap: {
-                                Storage.shared.write { db in
+                                Storage.shared.writeAsync { db in
                                     db[.shouldAutoPlayConsecutiveAudioMessages] = !db[.shouldAutoPlayConsecutiveAudioMessages]
                                 }
                             }

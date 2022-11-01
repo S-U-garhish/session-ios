@@ -67,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     minEstimatedTotalTime: minEstimatedTotalTime
                 )
             },
-            migrationsCompletion: { [weak self] result, needsConfigSync in
-                if case .failure(let error) = result {
+            migrationsCompletion: { [weak self] error, needsConfigSync in
+                guard error == nil else {
                     self?.showFailedMigrationAlert(error: error)
                     return
                 }
@@ -338,8 +338,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         minEstimatedTotalTime: minEstimatedTotalTime
                     )
                 },
-                migrationsCompletion: { [weak self] result, needsConfigSync in
-                    if case .failure(let error) = result {
+                migrationsCompletion: { [weak self] error, needsConfigSync in
+                    guard error == nil else {
+                        print("FailedMigrationAlert")
                         self?.showFailedMigrationAlert(error: error)
                         return
                     }

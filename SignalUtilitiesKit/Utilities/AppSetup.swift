@@ -1,9 +1,9 @@
 // Copyright © 2022 Rangeproof Pty Ltd. All rights reserved.
 
 import Foundation
-import GRDB
 import SessionMessagingKit
 import SessionUtilitiesKit
+import UIKit
 import SessionUIKit
 
 public enum AppSetup {
@@ -12,7 +12,7 @@ public enum AppSetup {
     public static func setupEnvironment(
         appSpecificBlock: @escaping () -> (),
         migrationProgressChanged: ((CGFloat, TimeInterval) -> ())? = nil,
-        migrationsCompletion: @escaping (Result<Database, Error>, Bool) -> ()
+        migrationsCompletion: @escaping (Error?, Bool) -> ()
     ) {
         guard !AppSetup.hasRun else { return }
         
@@ -61,7 +61,7 @@ public enum AppSetup {
     public static func runPostSetupMigrations(
         backgroundTask: OWSBackgroundTask? = nil,
         migrationProgressChanged: ((CGFloat, TimeInterval) -> ())? = nil,
-        migrationsCompletion: @escaping (Result<Database, Error>, Bool) -> ()
+        migrationsCompletion: @escaping (Error?, Bool) -> ()
     ) {
         var backgroundTask: OWSBackgroundTask? = (backgroundTask ?? OWSBackgroundTask(labelStr: #function))
         
@@ -73,9 +73,9 @@ public enum AppSetup {
                 SNUIKit.migrations()
             ],
             onProgressUpdate: migrationProgressChanged,
-            onComplete: { result, needsConfigSync in
+            onComplete: { error, needsConfigSync in
                 DispatchQueue.main.async {
-                    migrationsCompletion(result, needsConfigSync)
+                    migrationsCompletion(error, needsConfigSync)
                     
                     // The 'if' is only there to prevent the "variable never read" warning from showing
                     if backgroundTask != nil { backgroundTask = nil }

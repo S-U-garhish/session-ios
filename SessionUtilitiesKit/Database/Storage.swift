@@ -103,7 +103,7 @@ open class Storage {
         migrations: [TargetMigrations],
         async: Bool = true,
         onProgressUpdate: ((CGFloat, TimeInterval) -> ())?,
-        onComplete: @escaping (Swift.Result<Database, Error>, Bool) -> ()
+        onComplete: @escaping (Error?, Bool) -> ()
     ) {
         guard isValid, let dbWriter: DatabaseWriter = dbWriter else { return }
         
@@ -179,31 +179,27 @@ open class Storage {
         }
         
         // Store the logic to run when the migration completes
-        let migrationCompleted: (Swift.Result<Database, Error>) -> () = { [weak self] result in
+        let migrationCompleted: (Database, Error?) -> () = { [weak self] db, error in
             self?.hasCompletedMigrations = true
             self?.migrationProgressUpdater = nil
             SUKLegacy.clearLegacyDatabaseInstance()
             
-            if case .failure(let error) = result {
+            if let error = error {
                 SNLog("[Migration Error] Migration failed with error: \(error)")
             }
             
-            onComplete(result, needsConfigSync)
+            onComplete(error, needsConfigSync)
         }
         
         // Note: The non-async migration should only be used for unit tests
         guard async else {
             do { try self.migrator?.migrate(dbWriter) }
-            catch {
-                try? dbWriter.read { db in
-                    migrationCompleted(Swift.Result<Database, Error>.failure(error))
-                }
-            }
+            catch { try? dbWriter.read { db in migrationCompleted(db, error) } }
             return
         }
         
-        self.migrator?.asyncMigrate(dbWriter) { result in
-            migrationCompleted(result)
+        self.migrator?.asyncMigrate(dbWriter) { db, error in
+            migrationCompleted(db, error)
         }
     }
     
@@ -438,7 +434,7 @@ public extension ValueObservation {
     func publisher(
         in storage: Storage,
         scheduling scheduler: ValueObservationScheduler = Storage.defaultPublisherScheduler
-    ) -> AnyPublisher<Reducer.Value, Error> where Reducer: ValueReducer {
+    ) -> AnyPublisher<Reducer.Value, Error> {
         guard storage.isValid, let dbWriter: DatabaseWriter = storage.dbWriter else {
             return Fail(error: StorageError.databaseInvalid).eraseToAnyPublisher()
         }

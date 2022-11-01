@@ -105,10 +105,8 @@ final class JoinOpenGroupVC: BaseVC, UIPageViewControllerDataSource, UIPageViewC
     }
 
     fileprivate func handleCameraAccessGranted() {
-        DispatchQueue.main.async {
-            self.pages[1] = self.scanQRCodeWrapperVC
-            self.pageVC.setViewControllers([ self.scanQRCodeWrapperVC ], direction: .forward, animated: false, completion: nil)
-        }
+        pages[1] = scanQRCodeWrapperVC
+        pageVC.setViewControllers([ scanQRCodeWrapperVC ], direction: .forward, animated: false, completion: nil)
     }
 
     // MARK: - Updating

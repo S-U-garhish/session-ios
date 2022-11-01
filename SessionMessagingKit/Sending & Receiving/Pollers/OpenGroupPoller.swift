@@ -213,6 +213,7 @@ extension OpenGroupAPI {
                     OpenGroupAPI.capabilities(
                         db,
                         server: server,
+                        authenticated: false,
                         using: dependencies
                     )
                 }

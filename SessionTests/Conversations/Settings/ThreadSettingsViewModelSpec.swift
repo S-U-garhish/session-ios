@@ -25,7 +25,7 @@ class ThreadSettingsViewModelSpec: QuickSpec {
             
             beforeEach {
                 mockStorage = SynchronousStorage(
-                    customWriter: try! DatabaseQueue(),
+                    customWriter: DatabaseQueue(),
                     customMigrations: [
                         SNUtilitiesKit.migrations(),
                         SNSnodeKit.migrations(),

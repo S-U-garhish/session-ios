@@ -21,7 +21,7 @@ class NotificationContentViewModelSpec: QuickSpec {
             
             beforeEach {
                 mockStorage = Storage(
-                    customWriter: try! DatabaseQueue(),
+                    customWriter: DatabaseQueue(),
                     customMigrations: [
                         SNUtilitiesKit.migrations(),
                         SNSnodeKit.migrations(),

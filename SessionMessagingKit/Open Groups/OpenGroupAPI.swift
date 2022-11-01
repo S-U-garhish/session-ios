@@ -190,6 +190,7 @@ public enum OpenGroupAPI {
         _ db: Database,
         server: String,
         requests: [BatchRequestInfoType],
+        authenticated: Bool = true,
         using dependencies: SMKDependencies = SMKDependencies()
     ) -> Promise<[Endpoint: (OnionRequestResponseInfoType, Codable?)]> {
         let requestBody: BatchRequest = requests.map { $0.toSubRequest() }
@@ -204,6 +205,7 @@ public enum OpenGroupAPI {
                     endpoint: Endpoint.sequence,
                     body: requestBody
                 ),
+                authenticated: authenticated,
                 using: dependencies
             )
             .decoded(as: responseTypes, on: OpenGroupAPI.workQueue, using: dependencies)
@@ -227,6 +229,7 @@ public enum OpenGroupAPI {
     public static func capabilities(
         _ db: Database,
         server: String,
+        authenticated: Bool = true,
         using dependencies: SMKDependencies = SMKDependencies()
     ) -> Promise<(OnionRequestResponseInfoType, Capabilities)> {
         return OpenGroupAPI
@@ -236,6 +239,7 @@ public enum OpenGroupAPI {
                     server: server,
                     endpoint: .capabilities
                 ),
+                authenticated: authenticated,
                 using: dependencies
             )
             .decoded(as: Capabilities.self, on: OpenGroupAPI.workQueue, using: dependencies)
@@ -321,6 +325,7 @@ public enum OpenGroupAPI {
         _ db: Database,
         for roomToken: String,
         on server: String,
+        authenticated: Bool = true,
         using dependencies: SMKDependencies = SMKDependencies()
     ) -> Promise<(capabilities: (info: OnionRequestResponseInfoType, data: Capabilities), room: (info: OnionRequestResponseInfoType, data: Room))> {
         let requestResponseType: [BatchRequestInfoType] = [
@@ -348,6 +353,7 @@ public enum OpenGroupAPI {
                 db,
                 server: server,
                 requests: requestResponseType,
+                authenticated: authenticated,
                 using: dependencies
             )
             .map { (response: [Endpoint: (OnionRequestResponseInfoType, Codable?)]) -> (capabilities: (OnionRequestResponseInfoType, Capabilities), room: (OnionRequestResponseInfoType, Room)) in
@@ -385,6 +391,7 @@ public enum OpenGroupAPI {
     public static func capabilitiesAndRooms(
         _ db: Database,
         on server: String,
+        authenticated: Bool = true,
         using dependencies: SMKDependencies = SMKDependencies()
     ) -> Promise<(capabilities: (info: OnionRequestResponseInfoType, data: Capabilities), rooms: (info: OnionRequestResponseInfoType, data: [Room]))> {
         let requestResponseType: [BatchRequestInfoType] = [
@@ -412,6 +419,7 @@ public enum OpenGroupAPI {
                 db,
                 server: server,
                 requests: requestResponseType,
+                authenticated: authenticated,
                 using: dependencies
             )
             .map { (response: [Endpoint: (OnionRequestResponseInfoType, Codable?)]) -> (capabilities: (OnionRequestResponseInfoType, Capabilities), rooms: (OnionRequestResponseInfoType, [Room])) in
@@ -1278,8 +1286,8 @@ public enum OpenGroupAPI {
             .fetchSet(db))
             .defaulting(to: [])
 
-        // If we have no capabilities or if the server supports blinded keys then sign using the blinded key
-        if capabilities.isEmpty || capabilities.contains(.blind) {
+        // Check if the server supports blinded keys, if so then sign using the blinded key
+        if capabilities.contains(.blind) {
             guard let blindedKeyPair: Box.KeyPair = dependencies.sodium.blindedKeyPair(serverPublicKey: serverPublicKey, edKeyPair: userEdKeyPair, genericHash: dependencies.genericHash) else {
                 return nil
             }
@@ -1386,6 +1394,7 @@ public enum OpenGroupAPI {
     private static func send<T: Encodable>(
         _ db: Database,
         request: Request<T, Endpoint>,
+        authenticated: Bool = true,
         using dependencies: SMKDependencies = SMKDependencies()
     ) -> Promise<(OnionRequestResponseInfoType, Data?)> {
         let urlRequest: URLRequest
@@ -1404,6 +1413,11 @@ public enum OpenGroupAPI {
             .fetchOne(db)
         
         guard let publicKey: String = maybePublicKey else { return Promise(error: OpenGroupAPIError.noPublicKey) }
+        
+        // If we don't want to authenticate the request then send it immediately
+        guard authenticated else {
+            return dependencies.onionApi.sendOnionRequest(urlRequest, to: request.server, with: publicKey)
+        }
         
         // Attempt to sign the request with the new auth
         guard let signedRequest: URLRequest = sign(db, request: urlRequest, for: request.server, with: publicKey, using: dependencies) else {
