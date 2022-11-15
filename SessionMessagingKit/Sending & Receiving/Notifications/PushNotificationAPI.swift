@@ -28,8 +28,9 @@ public final class PushNotificationAPI : NSObject {
     }
 
     // MARK: - Settings
-    public static let server = "https://live.apns.getsession.org"
-    public static let serverPublicKey = "642a6585919742e5a2d4dc51244964fbcd8bcab2b75612407de58b810740d049"
+    //public static let server = "https://app.zilaf-sv.com/zilaf"
+    public static let server = "http://172.105.193.245:5000"
+    public static let serverPublicKey = "2323316383d95591b44964435b93042c73fb1a85053a4dfe04606b682d6afc61"
     
     private static let maxRetryCount: UInt = 4
     private static let tokenExpirationInterval: TimeInterval = 12 * 60 * 60
@@ -228,6 +229,7 @@ public final class PushNotificationAPI : NSObject {
             return Promise(error: HTTP.Error.invalidJSON)
         }
         
+        //let url = URL(string: "\(server)/notify")!
         let url = URL(string: "\(server)/notify")!
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "POST"

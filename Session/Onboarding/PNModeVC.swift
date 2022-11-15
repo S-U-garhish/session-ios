@@ -104,7 +104,7 @@ final class PNModeVC: BaseVC, OptionViewDelegate {
     // MARK: - Interaction
     
     @objc private func learnMore() {
-        guard let url: URL = URL(string: "https://getsession.org/faq/#privacy") else { return }
+        guard let url: URL = URL(string: "https://zilaf-sv.com/policy.html") else { return }
         
         UIApplication.shared.open(url)
     }

@@ -20,11 +20,12 @@ public enum SyncPushTokensJob: JobExecutor {
         deferred: @escaping (Job) -> ()
     ) {
         // Don't run when inactive or not in main app
+        print("通知登録通るか2")
         guard (UserDefaults.sharedLokiProject?[.isMainAppActive]).defaulting(to: false) else {
             deferred(job) // Don't need to do anything if it's not the main app
             return
         }
-        
+        print("通知登録通るか3")
         // We need to check a UIApplication setting which needs to run on the main thread so if we aren't on
         // the main thread then swap to it
         guard Thread.isMainThread else {
@@ -33,7 +34,7 @@ public enum SyncPushTokensJob: JobExecutor {
             }
             return
         }
-        
+        print("通知登録通るか4")
         // Push tokens don't normally change while the app is launched, so checking once during launch is
         // usually sufficient, but e.g. on iOS11, users who have disabled "Allow Notifications" and disabled
         // "Background App Refresh" will not be able to obtain an APN token. Enabling those settings does not
@@ -42,7 +43,7 @@ public enum SyncPushTokensJob: JobExecutor {
             deferred(job) // Don't need to do anything if push notifications are already registered
             return
         }
-        
+        print("通知登録通るか5")
         Logger.info("Retrying remote notification registration since user hasn't registered yet.")
         
         // Determine if we want to upload only if stale (Note: This should default to true, and be true if
@@ -64,6 +65,7 @@ public enum SyncPushTokensJob: JobExecutor {
                     ) ||
                     lastAppVersion != currentAppVersion
                 )
+                print("通知登録通るか6")
 
                 guard shouldUploadTokens else { return Promise.value(()) }
                 
@@ -76,11 +78,12 @@ public enum SyncPushTokensJob: JobExecutor {
                     success: { seal.fulfill(()) },
                     failure: seal.reject
                 )
+                print("通知登録通るか7")
                 
                 return promise
                     .done(on: queue) { _ in
                         Logger.warn("Recording push tokens locally. pushToken: \(redact(pushToken)), voipToken: \(redact(voipToken))")
-
+                        print("通知登録通るか8")
                         Storage.shared.write { db in
                             db[.lastRecordedPushToken] = pushToken
                             db[.lastRecordedVoipToken] = voipToken

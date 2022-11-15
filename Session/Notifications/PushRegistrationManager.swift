@@ -58,7 +58,7 @@ public enum PushRegistrationError: Error {
             #if targetEnvironment(simulator)
             throw PushRegistrationError.pushNotSupported(description: "Push not supported on simulators")
             #endif
-            
+            print("通知登録通るか6.5")
             return self.registerForVanillaPushToken().then { vanillaPushToken -> Promise<(pushToken: String, voipToken: String)> in
                 self.registerForVoipPushToken().map { voipPushToken in
                     (pushToken: vanillaPushToken, voipToken: voipPushToken ?? "")

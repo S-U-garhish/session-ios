@@ -216,11 +216,11 @@ final class RegisterVC : BaseVC {
         let touchInLegalLabelCoordinates = tapGestureRecognizer.location(in: legalLabel)
         let characterIndex = legalLabel.characterIndex(for: touchInLegalLabelCoordinates)
         if tosRange.contains(characterIndex) {
-            urlAsString = "https://getsession.org/terms-of-service/"
+            urlAsString = "https://zilaf-sv.com/service.html"
         } else if eulaRange.contains(characterIndex) {
-            urlAsString = "https://getsession.org/terms-of-service/#eula"
+            urlAsString = "https://zilaf-sv.com/service.html"
         } else if ppRange.contains(characterIndex) {
-            urlAsString = "https://getsession.org/privacy-policy/"
+            urlAsString = "https://zilaf-sv.com/policy.html"
         } else {
             urlAsString = nil
         }

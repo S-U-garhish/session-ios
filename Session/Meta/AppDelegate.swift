@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     self?.showFailedMigrationAlert(error: error)
                     return
                 }
+                print("通知登録通るか")
                 self?.completePostMigrationSetup(needsConfigSync: needsConfigSync)
             }
         )
@@ -264,6 +265,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func completePostMigrationSetup(needsConfigSync: Bool) {
         Configuration.performMainSetup()
+        print("通知登録通るか1")
         JobRunner.add(executor: SyncPushTokensJob.self, for: .syncPushTokens)
         /// Setup the UI
         ///

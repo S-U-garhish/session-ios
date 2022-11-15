@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, TSWhisperMessageType) {
 
 #define textSecureHTTPTimeOut 10
 
-#define kLegalTermsUrlString @"https://getsession.org/privacy-policy/"
+#define kLegalTermsUrlString @"https://zilaf-sv.com/policy.html"
 
 //#ifndef DEBUG
 
