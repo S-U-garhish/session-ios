@@ -361,7 +361,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     /// The user must unlock the device once after reboot before the database encryption key can be accessed.
     private func verifyDBKeysAvailableBeforeBackgroundLaunch() {
-        print("verifyDBKeysAvailableBeforeBackgroundLaunch呼び出され")
         guard UIApplication.shared.applicationState == .background else { return }
         guard !Storage.isDatabasePasswordAccessible else { return }    // All good
         Logger.info("Exiting because we are in the background and the database password is not accessible.")
