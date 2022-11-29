@@ -1,0 +1,14 @@
+/* 
+  InfoPlist.strings
+  Session
+
+  Created by user on 2022/11/29.
+  Copyright © 2022 Rangeproof Pty Ltd. All rights reserved.
+*/
+NSCameraUsageDescription = "ビデオ通話のためにはカメラへのアクセスが必要です。";
+NSPhotoLibraryUsageDescription="写真を送信するにはフォトライブラリへのアクセスが必要です。";
+NSPhotoLibraryAddUsageDescription = "写真を追加するにはフォトライブラリへのアクセスが必要です。";
+NSMicrophoneUsageDescription = "音声通話にはマイクへのアクセスが必要です。";
+NSAppleMusicUsageDescription = "メディア添付のためにアップルミュージックへのアクセスが必要です。";
+NSFaceIDUsageDescription = "スクリーンロックを利用するために、FaceIDへのアクセスが必要です。";
+NSContactsUsageDescription = "知り合いのユーザを探すために連絡先情報を利用します。この情報はサーバには送られません。";

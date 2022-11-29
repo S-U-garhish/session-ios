@@ -10,7 +10,7 @@
 		<string>10.15.6</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>Japan</string>
 	<key>CFBundleDisplayName</key>
 	<string>ZILAF</string>
 	<key>CFBundleExecutable</key>
@@ -23,6 +23,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ja</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
@@ -62,6 +66,8 @@
 	<string>public.app-category.social-networking</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>Localization native development region</key>
+	<string>Japan</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -84,21 +90,21 @@
 		</dict>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Signal needs to use Apple Music to play media attachments.</string>
+	<string>ZILAF needs to use Apple Music to play media attachments.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Session needs camera access to take pictures and scan QR codes.</string>
+	<string>ZILAF needs camera access to take pictures and scan QR codes.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Signal uses your contacts to find users you know. We do not store your contacts on the server.</string>
+	<string>ZILAF uses your contacts to find users you know. We do not store your contacts on the server.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Session's Screen Lock feature uses Face ID.</string>
+	<string>ZILAF's Screen Lock feature uses Face ID.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>com.loki-project.loki-messenger</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Session needs access to your microphone to record media.</string>
+	<string>ZILAF needs access to your microphone to record media.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Session needs access to your library to save photos.</string>
+	<string>ZILAF needs access to your library to save photos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Session needs access to your library to send photos.</string>
+	<string>ZILAF needs access to your library to send photos.</string>
 	<key>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</key>
 	<true/>
 	<key>UIAppFonts</key>

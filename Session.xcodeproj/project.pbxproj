@@ -497,6 +497,8 @@
 		C3F0A530255C80BC007BE2A3 /* NoopNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0A52F255C80BC007BE2A3 /* NoopNotificationsManager.swift */; };
 		CE74C1F928EC0891006D8AC5 /* UIView+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */; };
 		CE74C1FA28EC0B46006D8AC5 /* UIView+Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */; };
+		CEA1274B29359E2200725415 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEA1274929359E2200725415 /* InfoPlist.strings */; };
+		CEA1274C29359E2200725415 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEA1274929359E2200725415 /* InfoPlist.strings */; };
 		CEE449BA3596483519120D91 /* Pods_GlobalDependencies_FrameworkAndExtensionDependencies_ExtendedDependencies_SessionMessagingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A44E3F8AC9282AC5E6E5A /* Pods_GlobalDependencies_FrameworkAndExtensionDependencies_ExtendedDependencies_SessionMessagingKit.framework */; };
 		D2179CFC16BB0B3A0006F3AB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2179CFB16BB0B3A0006F3AB /* CoreTelephony.framework */; };
 		D2179CFE16BB0B480006F3AB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2179CFD16BB0B480006F3AB /* SystemConfiguration.framework */; };
@@ -1604,6 +1606,10 @@
 		C3F0A52F255C80BC007BE2A3 /* NoopNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoopNotificationsManager.swift; sourceTree = "<group>"; };
 		C3F0A5B2255C915C007BE2A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE74C1F828EC0891006D8AC5 /* UIView+Secure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Secure.swift"; sourceTree = "<group>"; };
+		CEA127442935954900725415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CEA127452935955500725415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CEA127462935956000725415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CEA1274A29359E2200725415 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D0CE0424239A1574F683D2D7 /* Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; path = "Target Support Files/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests/Pods-GlobalDependencies-FrameworkAndExtensionDependencies-ExtendedDependencies-SessionMessagingKit-SessionMessagingKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2179CFB16BB0B3A0006F3AB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D2179CFD16BB0B480006F3AB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -3347,6 +3353,7 @@
 		C3F0A58F255C8E3D007BE2A3 /* Meta */ = {
 			isa = PBXGroup;
 			children = (
+				CEA1274729359D6400725415 /* plistLocalize */,
 				C3AAFFF125AE99710089E6DD /* AppDelegate.swift */,
 				34D99CE3217509C1000AFB39 /* AppEnvironment.swift */,
 				7BFD1A952747689000FB91B9 /* TurnServers */,
@@ -3370,6 +3377,22 @@
 				B6B6C3C419193F5B00C0B76B /* Translations */,
 			);
 			path = Meta;
+			sourceTree = "<group>";
+		};
+		CEA1274729359D6400725415 /* plistLocalize */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1274829359DEB00725415 /* ja.lproj */,
+			);
+			path = plistLocalize;
+			sourceTree = "<group>";
+		};
+		CEA1274829359DEB00725415 /* ja.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1274929359E2200725415 /* InfoPlist.strings */,
+			);
+			path = ja.lproj;
 			sourceTree = "<group>";
 		};
 		D221A07E169C9E5E00537ABF = {
@@ -3792,6 +3815,7 @@
 		FD71160A28D00BAE00B47552 /* SessionTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEA127442935954900725415 /* Info.plist */,
 				FD71161228D00D5300B47552 /* Conversations */,
 				FD71161828D00E0100B47552 /* Settings */,
 			);
@@ -3887,6 +3911,7 @@
 		FD83B9B027CF200A005E1583 /* SessionUtilitiesKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEA127462935956000725415 /* Info.plist */,
 				FD37EA1228AB3F60003AE748 /* Database */,
 				FD83B9B927CF20A5005E1583 /* General */,
 			);
@@ -4034,6 +4059,7 @@
 		FDC4388F27B9FFC700C60D73 /* SessionMessagingKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEA127452935955500725415 /* Info.plist */,
 				FDC4389B27BA01E300C60D73 /* _TestUtilities */,
 				FD3C905D27E410DB00CD579F /* Common Networking */,
 				FD3C906527E416A200CD579F /* Contacts */,
@@ -4671,6 +4697,7 @@
 				34CF0788203E6B78005C4D61 /* ringback_tone_ansi.caf in Resources */,
 				7BFD1A972747689000FB91B9 /* Session-Turn-Server in Resources */,
 				34C3C78F2040A4F70000134C /* sonarping.mp3 in Resources */,
+				CEA1274B29359E2200725415 /* InfoPlist.strings in Resources */,
 				34661FB820C1C0D60056EDD6 /* message_sent.aiff in Resources */,
 				45CB2FA81CB7146C00E1B343 /* Launch Screen.storyboard in Resources */,
 				34C3C78D20409F320000134C /* Opening.m4r in Resources */,
@@ -4722,6 +4749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1274C29359E2200725415 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5989,6 +6017,14 @@
 			path = Meta/Translations;
 			sourceTree = "<group>";
 		};
+		CEA1274929359E2200725415 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEA1274A29359E2200725415 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -7156,7 +7192,7 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = R247RVUW79;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7228,7 +7264,7 @@
 				CODE_SIGN_ENTITLEMENTS = Session/Meta/Signal.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = R247RVUW79;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -7310,6 +7346,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -7374,6 +7412,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -7418,6 +7458,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionUtilitiesKitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -7481,6 +7523,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionUtilitiesKitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -7524,6 +7568,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionMessagingKitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -7587,6 +7633,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SessionMessagingKitTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
